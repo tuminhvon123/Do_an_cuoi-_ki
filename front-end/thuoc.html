@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Danh Mục Thuốc</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+    <div class="container">
+      <a class="navbar-brand" href="../index.html"><i class="fas fa-clinic-medical"></i> Y Tế Online</a>
+      <div class="mx-auto">
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Tìm bác sĩ, triệu chứng..." aria-label="Search"/>
+          <button class="btn btn-outline-primary" type="submit"><i class="fas fa-search"></i></button>
+        </form>
+      </div>
+      <div class="d-flex align-items-center">
+        <span class="text-primary fw-bold me-3">
+          <i class="fas fa-phone-alt me-2"></i>Hotline: <a href="tel:0797588054" class="text-primary text-decoration-none">0797588054</a>
+        </span>
+        <button class="btn btn-outline-primary me-2">Đăng nhập</button>
+        <button class="btn btn-primary">Đăng ký</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Menu -->
+  <nav class="sub-menu bg-white shadow-sm py-2">
+    <div class="container">
+      <ul class="nav nav-pills nav-fill">
+        <li class="nav-item"><a class="nav-link" href="../index.html">Trang chủ</a></li>
+        <li class="nav-item"><a class="nav-link" href="tintuc.html">Tin tức</a></li>
+        <li class="nav-item"><a class="nav-link" href="chatvoibacsi.html">Chat với bác sĩ</a></li>
+        <li class="nav-item"><a class="nav-link" href="camnang.html">Cẩm nang sức khỏe</a></li>
+        <li class="nav-item"><a class="nav-link" href="khambenhonl.html">Khám bệnh online</a></li>
+        <li class="nav-item"><a class="nav-link" href="benh.html">Bệnh</a></li>
+        <li class="nav-item"><a class="nav-link active" href="thuoc.html">Thuốc</a></li>
+        <li class="nav-item"><a class="nav-link" href="cosoyte.html">Cơ sở y tế</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  
+
+  <!-- Banner -->
+   <section class="hero bg-primary text-white text-center py-5">
+        <div class="container">
+            <h1 class="display-4">Tư Vấn Y Tế Trực Tuyến</h1>
+            <p class="lead">Kết nối với bác sĩ chuyên khoa, nhận tư vấn sức khỏe nhanh chóng và an toàn.</p>
+            <a href="#" class="btn btn-light btn-lg">Tư vấn ngay</a>
+        </div>
+    </section>
+
+  <!-- Main Content -->
+  <section class="main-content py-5">
+    <div class="container">
+      <div class="row">
+        <!-- Left Column -->
+        <div class="col-lg-8">
+          <h2 class="mb-4">Các Loại Thuốc Phổ Biến</h2>
+          <div class="row">
+            <!-- Thuốc 1 -->
+            <div class="col-md-6 mb-4">
+              <div class="card h-100">
+                <img src="../anh/Thuốc para.jpg" class="card-img-top" alt="Paracetamol">
+                <div class="card-body">
+                  <h5 class="card-title">Paracetamol</h5>
+                  <p class="card-text">Thuốc giảm đau, hạ sốt phổ biến.</p>
+                  <a href="#" class="btn btn-outline-primary btn-sm">Xem chi tiết</a>
+                </div>
+              </div>
+            </div>
+            <!-- Thuốc 2 -->
+            <div class="col-md-6 mb-4">
+              <div class="card h-100">
+                <img src="../anh/Thuốc Amo.jpg" class="card-img-top" alt="Amoxicillin">
+                <div class="card-body">
+                  <h5 class="card-title">Amoxicillin</h5>
+                  <p class="card-text">Thuốc kháng sinh điều trị nhiễm khuẩn.</p>
+                  <a href="#" class="btn btn-outline-primary btn-sm">Xem chi tiết</a>
+                </div>
+              </div>
+            </div>
+            <!-- Thuốc 3 -->
+            <div class="col-md-6 mb-4">
+              <div class="card h-100">
+                <img src="../anh/Thuốc lora.jpg" class="card-img-top" alt="Loratadin">
+                <div class="card-body">
+                  <h5 class="card-title">Loratadin</h5>
+                  <p class="card-text">Thuốc chống dị ứng, giảm ngứa mẩn đỏ.</p>
+                  <a href="#" class="btn btn-outline-primary btn-sm">Xem chi tiết</a>
+                </div>
+              </div>
+            </div>
+            <!-- Thuốc 4 -->
+            <div class="col-md-6 mb-4">
+              <div class="card h-100">
+                <img src="../anh/Thuốc ome.jpg" class="card-img-top" alt="Omeprazole">
+                <div class="card-body">
+                  <h5 class="card-title">Omeprazole</h5>
+                  <p class="card-text">Điều trị trào ngược dạ dày, viêm loét.</p>
+                  <a href="#" class="btn btn-outline-primary btn-sm">Xem chi tiết</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Right Sidebar -->
+        <div class="col-lg-4">
+          <h2 class="mb-4">Tiện ích sức khỏe</h2>
+          <ul class="list-group">
+            <li class="list-group-item"><a href="#">Khám bệnh online</a></li>
+            <li class="list-group-item"><a href="#">Tìm nhanh bác sĩ</a></li>
+            <li class="list-group-item"><a href="#">Tra cứu thông tin bệnh</a></li>
+            <li class="list-group-item"><a href="#">Tra cứu thông tin thuốc</a></li>
+            <li class="list-group-item"><a href="#">Tư vấn qua Hotline</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partners -->
+   <section class="partners py-5">
+        <div class="container">
+            <h2 class="mb-4">Đối tác</h2>
+            <div class="partner-slider">
+                <div class="partner-logos">
+                    <span class="partner-logo"><img src="../anh/cho ray.webp" alt=""></span>
+                    <span class="partner-logo"><img src="../anh/cần thơ.webp" alt=""></span>
+                    <span class="partner-logo"><img src="../anh/haiduong.png" alt=""></span>
+                    <span class="partner-logo"><img src="../anh/Khánh hòa.png" alt=""></span>
+                    <span class="partner-logo"><img src="../anh/Tudu.jpg" alt=""></span>
+                    <span class="partner-logo"><img src="../anh/cho ray.webp" alt=""></span>
+                    <span class="partner-logo"><img src="../anh/cần thơ.webp" alt=""></span>
+                    <span class="partner-logo"><img src="../anh/haiduong.png" alt=""></span>
+                    <span class="partner-logo"><img src="../anh/Khánh hòa.png" alt=""></span>
+                    <span class="partner-logo"><img src="../anh/Tudu.jpg" alt=""></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+  <!-- Newsletter -->
+  <section class="newsletter py-5">
+    <div class="container">
+      <h2 class="mb-4">Đăng ký nhận bản tin sức khỏe</h2>
+      <form class="d-flex">
+        <input type="email" class="form-control me-2" placeholder="Nhập email của bạn" required>
+        <button class="btn btn-primary">Đăng ký</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="features py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Dịch Vụ Của Chúng Tôi</h2>
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <i class="fas fa-comment-medical fa-2x mb-2 text-primary"></i>
+          <h5>Tư Vấn Trực Tuyến</h5>
+          <p>Trao đổi cùng bác sĩ mọi lúc.</p>
+        </div>
+        <div class="col-md-4 text-center">
+          <i class="fas fa-calendar-check fa-2x mb-2 text-primary"></i>
+          <h5>Đặt Lịch Khám</h5>
+          <p>Đặt lịch nhanh chóng và thuận tiện.</p>
+        </div>
+        <div class="col-md-4 text-center">
+          <i class="fas fa-book-medical fa-2x mb-2 text-primary"></i>
+          <h5>Kiến Thức Y Tế</h5>
+          <p>Thông tin sức khỏe đáng tin cậy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-3">
+    <p>© 2025 Y Tế Online. Mọi quyền được bảo lưu.</p>
+  </footer>
+
+
+</body>
+</html>
