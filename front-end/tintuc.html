@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tin Tức - Y Tế Online</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:it...lay=swap"
+        rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+        <div class="container">
+            <!-- Left: Website Name -->
+            <a class="navbar-brand" href="../index.html"><i class="fas fa-clinic-medical"></i> Y Tế Online</a>
+
+            <!-- Center: Search Bar -->
+            <div class="mx-auto" id="searchContainer">
+                <form class="d-flex" id="searchForm">
+                    <input class="form-control me-2" type="search" placeholder="Tìm bác sĩ, triệu chứng..." aria-label="Search" id="searchInput">
+                    <button class="btn btn-outline-primary" type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+
+            <!-- Right: Hotline and Login/Register -->
+            <div class="d-flex align-items-center">
+                <span class="text-primary fw-bold me-3">
+                    <i class="fas fa-phone-alt me-2"></i>Hotline 24/7:
+                    <a href="tel:0797588054" class="text-primary text-decoration-none">0797588054</a>
+                </span>
+                <button class="btn btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#loginModal">Đăng nhập</button>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registerModal">Đăng ký</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Menu (Mục lục) -->
+    <nav class="sub-menu bg-white shadow-sm py-2">
+        <div class="container">
+            <ul class="nav nav-pills nav-fill">
+                <li class="nav-item">
+                    <a class="nav-link" href="../index.html">Trang chủ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="tintuc.html">Tin tức</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Chat với bác sĩ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="camnang.html">Cẩm nang sức khỏe</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Khám bệnh online</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="benh.html">Bệnh</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Thuốc</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Cơ sở y tế</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Banner -->
+    <section class="hero bg-primary text-white text-center py-5">
+        <div class="container">
+            <h1 class="display-4">Tư Vấn Y Tế Trực Tuyến</h1>
+            <p class="lead">Kết nối với bác sĩ chuyên khoa, nhận tư vấn sức khỏe nhanh chóng và an toàn.</p>
+            <a href="#" class="btn btn-light btn-lg">Tư vấn ngay</a>
+        </div>
+    </section>
+
+<!-- Nội dung chính -->
+<section class="main-content py-5">
+    <div class="container">
+        <div class="row">
+            <!-- Left Column (2/3) -->
+            <div class="col-lg-8">
+                <!-- Tin tức nổi bật -->
+                <h2 class="mb-4">Tin tức nổi bật</h2>
+                <div class="row" id="featuredNews">
+                    <div class="col-md-12 mb-4 item" data-title="Sốt xuất huyết gia tăng tại TP.HCM">
+                        <div class="card">
+                            <a href="../front-end/Noidungtintuc/sotxuathuyet.html">
+                                <img src="../anh/sốt xuat huyet.png" class="card-img-top" alt="Sốt xuất huyết TP.HCM">
+                            </a>
+                            <div class="card-body">
+                                <a href="../front-end/Noidungtintuc/sotxuathuyet.html">
+                                    <h5 class="card-title">Sốt xuất huyết gia tăng tại TP.HCM <span class="source">(Nguồn: HCDC, 01/07/2025)</span></h5>
+                                </a>
+                                <p class="card-text">Tính đến tuần thứ 7/2025, TP.HCM ghi nhận 3.431 ca, tăng 125,3% so với cùng kỳ 2024.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 mb-4 item" data-title="Cảnh báo nắng nóng tại miền Bắc">
+                        <div class="card">
+                            <a href="tin-tuc-chi-tiet.html?id=1">
+                                <img src="../anh/năng nóng.webp" class="card-img-top" alt="Nắng nóng miền Bắc">
+                            </a>
+                            <div class="card-body">
+                                <a href="tin-tuc-chi-tiet.html?id=1">
+                                    <h5 class="card-title">Cảnh báo nắng nóng tại miền Bắc <span class="source">(Nguồn: Bộ Y tế, 25/06/2025)</span></h5>
+                                </a>
+                                <p class="card-text">Nhiệt độ tại Hà Nội đạt 38°C, Bộ Y tế khuyến cáo phòng tránh sốc nhiệt.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tin tức mới nhất -->
+                <h2 class="mb-4 mt-5">Tin tức mới nhất</h2>
+                <div class="row" id="latestNews">
+                    <div class="col-md-6 mb-4 item" data-title="Chiến dịch tiêm vắc-xin sốt xuất huyết">
+                        <div class="card">
+                            <a href="tin-tuc-chi-tiet.html?id=2">
+                                <img src="../anh/tiemchung.webp" class="card-img-top" alt="Vắc-xin sốt xuất huyết">
+                            </a>
+                            <div class="card-body">
+                                <a href="tin-tuc-chi-tiet.html?id=2">
+                                    <h5 class="card-title">Chiến dịch tiêm vắc-xin sốt xuất huyết <span class="source">(Nguồn: Bộ Y tế, 15/05/2024)</span></h5>
+                                </a>
+                                <p class="card-text">Vắc-xin Qdenga triển khai tại TP.HCM từ tháng 9/2024, mở rộng toàn quốc.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4 item" data-title="Tăng ca bệnh tim mạch">
+                        <div class="card">
+                            <a href="tin-tuc-chi-tiet.html?id=3">
+                                <img src="../anh/tim mach.webp" class="card-img-top" alt="Bệnh tim mạch">
+                            </a>
+                            <div class="card-body">
+                                <a href="tin-tuc-chi-tiet.html?id=3">
+                                    <h5 class="card-title">Tăng ca bệnh tim mạch <span class="source">(Nguồn: Bộ Y tế, 01/07/2025)</span></h5>
+                                </a>
+                                <p class="card-text">Hơn 4 triệu người tại Việt Nam mắc bệnh hô hấp mạn tính, tăng 5% năm 2025.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Có thể bạn quan tâm -->
+                <h2 class="mb-4 mt-5">Có thể bạn quan tâm</h2>
+                <div class="row" id="recommendedNews">
+                    <div class="col-md-6 mb-4 item" data-title="Dinh dưỡng cho người cao tuổi">
+                        <div class="card">
+                            <a href="tin-tuc-chi-tiet.html?id=4">
+                               <img src="../anh/dinh dưỡng người cao tuổi.webp" class="card-img-top" alt="Dinh dưỡng người cao tuổi">
+                            </a>
+                            <div class="card-body">
+                                <a href="tin-tuc-chi-tiet.html?id=4">
+                                    <h5 class="card-title">Dinh dưỡng cho người cao tuổi <span class="source">(Nguồn: Bộ Y tế, 2024)</span></h5>
+                                </a>
+                                <p class="card-text">Canxi và omega-3 giúp giảm loãng xương, theo khuyến nghị Bộ Y tế.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4 item" data-title="Sức khỏe tinh thần trong mùa dịch">
+                        <div class="card">
+                            <a href="tin-tuc-chi-tiet.html?id=5">
+                                <img src="../anh/mua dịch.webp" class="card-img-top" alt="Sức khỏe tinh thần">
+                            </a>
+                            <div class="card-body">
+                                <a href="tin-tuc-chi-tiet.html?id=5">
+                                    <h5 class="card-title">Sức khỏe tinh thần trong mùa dịch <span class="source">(Nguồn: Bộ Y tế, 2023)</span></h5>
+                                </a>
+                                <p class="card-text">Thiền và tư vấn tâm lý được khuyến khích để giảm căng thẳng.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4 item" data-title="Robot phẫu thuật tại Chợ Rẫy">
+                        <div class="card">
+                            <a href="tin-tuc-chi-tiet.html?id=6">
+                                <img src="../anh/robot y tế.webp" class="card-img-top" alt="Robot phẫu thuật">
+                            </a>
+                            <div class="card-body">
+                                <a href="tin-tuc-chi-tiet.html?id=6">
+                                    <h5 class="card-title">Robot phẫu thuật tại Chợ Rẫy <span class="source">(Nguồn: BV Chợ Rẫy, 01/06/2025)</span></h5>
+                                </a>
+                                <p class="card-text">Da Vinci áp dụng từ tháng 6/2025, tăng độ chính xác phẫu thuật.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4 item" data-title="Nguy cơ sốc nhiệt">
+                        <div class="card">
+                            <a href="tin-tuc-chi-tiet.html?id=7">
+                                <img src="../anh/sốc nhiệt.webp" class="card-img-top" alt="Nguy cơ sốc nhiệt">
+                            </a>
+                            <div class="card-body">
+                                <a href="tin-tuc-chi-tiet.html?id=7">
+                                  <h5 class="card-title">Nguy cơ sốc nhiệt <span class="source">(Nguồn: Bộ Y tế, 25/06/2025)</span></h5>
+                                </a>
+                                <p class="card-text">Tăng ca sốc nhiệt do nắng nóng, khuyến cáo tránh ngoài trời từ 10h-15h.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+           
+                <!-- Thanh bên phải (1/3) -->
+                <div class="col-lg-4">
+                    <!-- Find Medical Facility -->
+                    <h2 class="mb-4">Tìm cơ sở y tế</h2>
+                    <form class="mb-4">
+                        <div class="mb-3">
+                            <label for="province" class="form-label">Tỉnh/Thành phố</label>
+                            <select class="form-select" id="province" onchange="updateDistricts()">
+                                <option value="">Chọn tỉnh/thành phố</option>
+                                <option value="hanoi">Hà Nội</option>
+                                <option value="hcm">TP. Hồ Chí Minh</option>
+                                <option value="danang">Đà Nẵng</option>
+                                <option value="ninhthuan">Ninh Thuận</option>
+                                <option value="binhthuan">Bình Thuận</option>
+                                <option value="binhdinh">Bình Định</option>
+                                <option value="kontum">Kon Tum</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="district" class="form-label">Quận/Huyện</label>
+                            <select class="form-select" id="district">
+                                <option value="">Chọn quận/huyện</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Xem kết quả</button>
+                    </form>
+
+                    <!-- Online Consultation -->
+                    <h2 class="mb-4">Khám bệnh online</h2>
+                    <a href="#" class="btn btn-primary w-100 mb-4">Đăng ký nhanh</a>
+
+                    <!-- Health Utilities -->
+                    <h2 class="mb-4">Tiện ích sức khỏe</h2>
+                    <ul class="list-group">
+                        <li class="list-group-item"><a href="#">Khám bệnh online</a></li>
+                        <li class="list-group-item"><a href="#">Hỏi đáp dịch vụ y</a></li>
+                        <li class="list-group-item"><a href="tel:19001234">Tư vấn qua Hotline</a></li>
+                        <li class="list-group-item"><a href="#">Gửi câu hỏi qua Messenger</a></li>
+                        <li class="list-group-item"><a href="#">Tìm nhanh bác sĩ</a></li>
+<li class="list-group-item"><a href="#">Tìm nhanh bệnh viện</a></li>
+                        <li class="list-group-item"><a href="#">Tra cứu thông tin bệnh</a></li>
+                        <li class="list-group-item"><a href="#">Tra cứu thông tin thuốc</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Đối tác -->
+    <section class="partners py-5">
+        <div class="container">
+            <h2 class="mb-4">Đối tác</h2>
+            <div class="partner-slider">
+                <div class="partner-logos">
+                    <span class="partner-logo"><img src="../anh/cho ray.webp" alt=""></span>
+                    <span class="partner-logo"><img src="../anh/cần thơ.webp" alt=""></span>
+                    <span class="partner-logo"><img src="../anh/haiduong.png" alt=""></span>
+                    <span class="partner-logo"><img src="../anh/Khánh hòa.png" alt=""></span>
+                    <span class="partner-logo"><img src="../anh/Tudu.jpg" alt=""></span>
+                    <span class="partner-logo"><img src="../anh/cho ray.webp" alt=""></span>
+                    <span class="partner-logo"><img src="../anh/cần thơ.webp" alt=""></span>
+                    <span class="partner-logo"><img src="../anh/haiduong.png" alt=""></span>
+                    <span class="partner-logo"><img src="../anh/Khánh hòa.png" alt=""></span>
+                    <span class="partner-logo"><img src="../anh/Tudu.jpg" alt=""></span>
+                </div>..
+            </div>..
+        </div>
+    </section>
+
+
+     <!-- Dịch vụ -->
+    <section class="features py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Dịch Vụ Của Chúng Tôi</h2>
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    <i class="fas fa-comment-medical fa-3x mb-3 text-primary"></i>
+                    <h5>Tư Vấn Trực Tuyến</h5>
+                    <p>Trao đổi với bác sĩ qua video hoặc chat, mọi lúc, mọi nơi.</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <i class="fas fa-calendar-check fa-3x mb-3 text-primary"></i>
+                    <h5>Đặt Lịch Khám</h5>
+                    <p>Đặt lịch với bác sĩ hoặc phòng khám gần bạn chỉ với vài cú nhấp chuột.</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <i class="fas fa-book-medical fa-3x mb-3 text-primary"></i>
+                    <h5>Kiến Thức Y Tế</h5>
+                    <p>Truy cập thư viện bài viết và video về sức khỏe đáng tin cậy.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Đăng ký nhận bản tin -->
+    <section class="newsletter py-5">
+        <div class="container">
+            <div class="row">
+<div class="col-12">
+                    <h2 class="mb-4">Đăng ký nhận bản tin sức khỏe</h2>
+                    <form class="d-flex mb-4" onsubmit="handleNewsletterSignup(event)">
+                        <input type="email" class="form-control me-2" placeholder="Nhập email của bạn" required>
+                        <button type="submit" class="btn btn-primary">Đăng ký</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chatbox AI -->
+    <div class="chatbot-button position-fixed bottom-0 end-0 m-3" id="chatbotConsultation">
+        <button class="btn btn-primary rounded-circle mb-2" onclick="toggleChatbot()">
+            <i class="fas fa-comment"></i>
+        </button>
+        <div class="chatbot-chat-box d-none shadow p-3 bg-white rounded">
+            <div class="chat-header">
+                <h6>Trợ lý ảo</h6>
+                <button class="btn-close" onclick="toggleChatbot()"></button>
+            </div>
+            <div class="chat-content p-2" style="max-height: 200px; overflow-y: auto;">
+                <p class="text-muted small">Bạn đã câu hỏi nào...</p>
+            </div>
+            <form class="chat-input mt-2" onsubmit="handleChatbotConsultation(event)">
+                <div class="input-group">
+                    <textarea class="form-control" id="chatbotMessage" rows="1" placeholder="Nhập tin nhắn..." required></textarea>
+                    <button type="submit" class="btn btn-success">Tư vấn</button>
+                </div>
+            </form>
+            <div class="mt-2">
+                <button class="btn btn-info w-100" onclick="scheduleAppointment()">Đặt lịch khám bệnh</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Đăng nhập</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="loginEmail" class="form-label">Email hoặc Số điện thoại</label>
+                            <input type="text" class="form-control" id="loginEmail" placeholder="Nhập email hoặc số điện thoại">
+                        </div>
+                        <div class="mb-3">
+                            <label for="loginPassword" class="form-label">Mật khẩu</label>
+                            <input type="password" class="form-control" id="loginPassword" placeholder="Nhập mật khẩu">
+                        </div>
+                        <div class="mb-3">
+<a href="#" class="text-primary">Quên mật khẩu?</a>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Đăng nhập</button>
+                    </form>
+                    <p class="mt-3 text-center">Chưa có tài khoản? <a href="#" data-bs-toggle="modal" data-bs-target="#registerModal" data-bs-dismiss="modal">Đăng ký ngay</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="registerModalLabel">Đăng ký</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="registerName" class="form-label">Họ và tên</label>
+                            <input type="text" class="form-control" id="registerName" placeholder="Nhập họ và tên">
+                        </div>
+                        <div class="mb-3">
+                            <label for="registerEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="registerEmail" placeholder="Nhập email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="registerPassword" class="form-label">Mật khẩu</label>
+                            <input type="password" class="form-control" id="registerPassword" placeholder="Nhập mật khẩu">
+                        </div>
+                        <div class="mb-3">
+                            <label for="registerConfirmPassword" class="form-label">Xác nhận mật khẩu</label>
+                            <input type="password" class="form-control" id="registerConfirmPassword" placeholder="Xác nhận mật khẩu">
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Đăng ký</button>
+                    </form>
+                    <p class="mt-3 text-center">Đã có tài khoản? <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-dismiss="modal">Đăng nhập ngay</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p>© 2025 Y Tế Online. Mọi quyền được bảo lưu.</p>
+            <p>
+                <a href="#" class="text-white me-2"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="text-white me-2"><i class="fab fa-twitter"></i></a>
+<a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="scripts.js"></script>
+</body>
+
+</html>

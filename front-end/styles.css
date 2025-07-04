@@ -1,0 +1,353 @@
+/* Custom styles */
+body {
+    font-family: "Roboto", sans-serif;
+padding-top: 80px;
+}
+
+.hero {
+    background: linear-gradient(to right, #007bff, #00c4cc);
+    background-image: url(/anh/anh\ trang\ chu\ menu.jpg);
+    padding: 60px 0;
+}
+
+.features i {
+    color: #151b21;
+}
+
+.chatbot-button {
+    z-index: 1000;
+}
+
+
+.navbar {
+    position: fixed; /* Cố định tại vị trí */
+    top: 0; /* Đặt ở đầu trang */
+    left: 0; /* Đảm bảo chiếm toàn bộ chiều rộng */
+    right: 0; /* Đảm bảo chiếm toàn bộ chiều rộng */
+    padding: 1rem 0; /* Giữ padding mặc định */
+    min-height: 80px; /* Giữ chiều cao như trước */
+    z-index: 1000; /* Đảm bảo navbar hiển thị trên các phần khác */
+    background-color: #fff; /* Đảm bảo nền trắng để nội dung dễ đọc */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Giữ độ bóng */
+}
+/* Navbar styles */
+.navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #00c4cc;
+    max-width: 100%;
+}
+
+.navbar .form-control {
+    border-radius: 20px;
+    max-width: 800px;
+
+}
+
+
+
+
+/* Tùy chỉnh Search Bar */
+.mx-auto {
+    width: 500px;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#searchContainer {
+    max-width: 550px;
+    width: 100%;
+}
+
+#searchForm {
+    width: 100%;
+}
+
+#searchForm .form-control {
+    border-radius: 20px;
+    border: 1px solid #ced4da;
+    padding: 0.375rem 1rem;
+    font-size: 1rem;
+    height: 40px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#searchForm .form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+.navbar .btn-outline-primary {
+    border-radius: 20px;
+    padding: 0.375rem 1rem;
+    font-size: 1rem;
+    height: 40px;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar .btn-outline-primary:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.navbar .btn-outline-primary i {
+    font-size: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+    .mx-auto {
+        width: 100%;
+        padding: 0 1rem;
+    }
+
+    #searchForm .form-control {
+        font-size: 0.9rem;
+        height: 38px;
+    }
+
+    .navbar .btn-outline-primary {
+        font-size: 0.9rem;
+        height: 38px;
+    }
+}
+
+@media (max-width: 767px) {
+    .mx-auto {
+        padding: 0 0.5rem;
+    }
+
+    #searchForm .form-control {
+        font-size: 0.85rem;
+        height: 36px;
+    }
+
+    .navbar .btn-outline-primary {
+        font-size: 0.85rem;
+        height: 36px;
+    }
+}
+
+
+/* Sub-menu styles */
+.sub-menu {
+    background-color: #f8f9fa;
+}
+
+.sub-menu .nav-link {
+    color: #333;
+    font-weight: 500;
+    padding: 10px 15px;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.sub-menu .nav-link:hover {
+    color: #007bff;
+    background-color: #e9ecef;
+    border-radius: 5px;
+}
+
+.sub-menu .nav-link.active {
+    color: #007bff;
+    background-color: #e9ecef;
+    border-radius: 5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+    .sub-menu .nav {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+    .sub-menu .nav-link {
+        display: inline-block;
+    }
+
+    /* Adjust navbar for mobile */
+    .navbar .container {
+        flex-wrap: wrap;
+    }
+    .navbar .d-flex.align-items-center {
+        margin-top: 10px;
+    }
+}
+
+
+
+
+
+/* Modal styles */
+.modal-content {
+    border-radius: 10px;
+}
+
+.modal .btn-primary {
+    border-radius: 20px;
+}
+/* Featured Articles */
+.main-content .card {
+    border: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.card-body {
+    padding: 1.25rem;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+}
+
+.card-text {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.btn-outline-primary {
+    font-size: 0.9rem;
+    padding: 0.25rem 0.75rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+    .card-img-top {
+        height: 120px;
+    }
+    .card-title {
+        font-size: 1rem;
+    }
+    .card-text {
+        font-size: 0.85rem;
+    }
+    .btn-outline-primary {
+        font-size: 0.85rem;
+    }
+}
+
+/* Nội dung chính */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Partners Section */
+.partners {
+    background-color: #f8f9fa;
+}
+
+.partner-slider {
+    height: 100px; /* Chiều cao cố định cho slider */
+    margin: auto;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.partner-logos {
+    display: flex;
+    align-items: center;
+    width: 200%; /* Đảm bảo đủ không gian để logo lặp lại */
+    animation: scrollLeft 10s linear infinite; /* Animation chạy từ trái sang phải */
+}
+
+.partner-logo {
+    width: 100px; /* Kích thước logo */
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    margin: 0 30px;
+}
+
+.partner-logo img {
+    max-width: 200%;
+    max-height: 120%;
+    object-fit: contain; /* Giữ tỷ lệ logo */
+}
+/* Pause animation on hover */
+.partner-logos.paused {
+    animation-play-state: paused;
+}
+
+/* Animation for partner logos (from left to right) */
+@keyframes scrollLeft {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%); /* Di chuyển nửa chiều rộng để lặp lại */
+    }
+}
+/* Animation for partner logos */
+@keyframes scrolls {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%); /* Di chuyển toàn bộ chiều rộng của slider */
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+    .partner-slider {
+        height: 80px; /* Giảm chiều cao trên di động */
+    }
+    .partner-logo {
+        width: 150px; /* Giảm kích thước logo trên di động */
+        height: 80px;
+        margin: 0 15px; /* Giảm khoảng cách */
+    }
+    @keyframes scrolls {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-100%); /* Điều chỉnh dựa trên chiều rộng mới */
+        }
+    }
+}
+
+
+/* Đăng ký nhận bản tin */
+.mb-4{
+
+    
+}
+.row .col-12{
+    background: linear-gradient(to right, #aafbff, #b3cacb);
+    border-radius: 5%;
+    
+}
+footer a {
+    text-decoration: none;
+}
+
+
+
+
+
