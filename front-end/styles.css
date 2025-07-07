@@ -247,6 +247,7 @@ body {
 .hero .lead {
     font-size: 1.25rem;
     margin-bottom: 1.5rem;
+    font-weight: bold;
 }
 
 .hero .btn {
