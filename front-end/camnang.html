@@ -25,7 +25,7 @@
           <a href="tel:0797588054" class="text-primary text-decoration-none">0797588054</a>
         </span>
         <button class="btn btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#loginModal">Đăng nhập</button>
-        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registerModal">Đăng ký</button>
+   
       </div>
     </div>
   </nav>
@@ -38,7 +38,6 @@
         <li class="nav-item"><a class="nav-link" href="tintuc.html">Tin tức</a></li>
         <li class="nav-item"><a class="nav-link" href="chatvoibacsi.html">Chat với bác sĩ</a></li>
         <li class="nav-item"><a class="nav-link active" href="camnang.html">Cẩm nang sức khỏe</a></li>
-        <li class="nav-item"><a class="nav-link" href="khambenhonl.html">Khám bệnh online</a></li>
         <li class="nav-item"><a class="nav-link" href="benh.html">Bệnh</a></li>
         <li class="nav-item"><a class="nav-link" href="thuoc.html">Thuốc</a></li>
         <li class="nav-item"><a class="nav-link" href="cosoyte.html">Cơ sở y tế</a></li>
@@ -201,6 +200,69 @@
       </form>
     </div>
   </section>
+
+   <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Đăng nhập</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="loginEmail" class="form-label">Email hoặc Số điện thoại</label>
+                            <input type="text" class="form-control" id="loginEmail" placeholder="Nhập email hoặc số điện thoại">
+                        </div>
+                        <div class="mb-3">
+                            <label for="loginPassword" class="form-label">Mật khẩu</label>
+                            <input type="password" class="form-control" id="loginPassword" placeholder="Nhập mật khẩu">
+                        </div>
+                        <div class="mb-3">
+<a href="#" class="text-primary">Quên mật khẩu?</a>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Đăng nhập</button>
+                    </form>
+                    <p class="mt-3 text-center">Chưa có tài khoản? <a href="#" data-bs-toggle="modal" data-bs-target="#registerModal" data-bs-dismiss="modal">Đăng ký ngay</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="registerModalLabel">Đăng ký</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="registerName" class="form-label">Họ và tên</label>
+                            <input type="text" class="form-control" id="registerName" placeholder="Nhập họ và tên">
+                        </div>
+                        <div class="mb-3">
+                            <label for="registerEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="registerEmail" placeholder="Nhập email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="registerPassword" class="form-label">Mật khẩu</label>
+                            <input type="password" class="form-control" id="registerPassword" placeholder="Nhập mật khẩu">
+                        </div>
+                        <div class="mb-3">
+                            <label for="registerConfirmPassword" class="form-label">Xác nhận mật khẩu</label>
+                            <input type="password" class="form-control" id="registerConfirmPassword" placeholder="Xác nhận mật khẩu">
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Đăng ký</button>
+                    </form>
+                    <p class="mt-3 text-center">Đã có tài khoản? <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-dismiss="modal">Đăng nhập ngay</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
 
   <footer class="bg-dark text-white py-4 text-center">
     <p>© 2025 Y Tế Online. Mọi quyền được bảo lưu.</p>
