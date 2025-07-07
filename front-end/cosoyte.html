@@ -10,6 +10,18 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <!-- Custom CSS -->
   <link rel="stylesheet" href="styles.css"/>
+  <style>
+    #map {
+      height: 400px;
+      width: 100%;
+      margin-top: 20px;
+    }
+    #directionsPanel {
+      margin-top: 20px;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+  </style>
 </head>
 <body>
 
@@ -18,19 +30,17 @@
     <div class="container">
       <a class="navbar-brand" href="../index.html"><i class="fas fa-clinic-medical"></i> Y Tế Online</a>
       <div class="mx-auto">
-         <div class="mx-auto" id="searchContainer">
-                <form class="d-flex" id="searchForm">
-                    <input class="form-control me-2" type="search" placeholder="Tìm bác sĩ, triệu chứng..." aria-label="Search" id="searchInput">
-                    <button class="btn btn-outline-primary" type="submit"><i class="fas fa-search"></i></button>
-                </form>
-            </div>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Tìm bác sĩ, triệu chứng..." aria-label="Search"/>
+          <button class="btn btn-outline-primary" type="submit"><i class="fas fa-search"></i></button>
+        </form>
       </div>
       <div class="d-flex align-items-center">
         <span class="text-primary fw-bold me-3">
           <i class="fas fa-phone-alt me-2"></i>Hotline: <a href="tel:0797588054" class="text-primary text-decoration-none">0797588054</a>
         </span>
-         <button class="btn btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#loginModal">Đăng nhập</button>
-      
+        <button class="btn btn-outline-primary me-2">Đăng nhập</button>
+        <button class="btn btn-primary">Đăng ký</button>
       </div>
     </div>
   </nav>
@@ -43,6 +53,7 @@
         <li class="nav-item"><a class="nav-link" href="tintuc.html">Tin tức</a></li>
         <li class="nav-item"><a class="nav-link" href="chatvoibacsi.html">Chat với bác sĩ</a></li>
         <li class="nav-item"><a class="nav-link" href="camnang.html">Cẩm nang sức khỏe</a></li>
+        <li class="nav-item"><a class="nav-link" href="khambenhonl.html">Khám bệnh online</a></li>
         <li class="nav-item"><a class="nav-link" href="benh.html">Bệnh</a></li>
         <li class="nav-item"><a class="nav-link" href="thuoc.html">Thuốc</a></li>
         <li class="nav-item"><a class="nav-link active" href="cosoyte.html">Cơ sở y tế</a></li>
@@ -51,13 +62,14 @@
   </nav>
 
   <!-- Banner -->
-   <section class="hero bg-primary text-white text-center py-5">
-        <div class="container">
-            <h1 class="display-4">Tư Vấn Y Tế Trực Tuyến</h1>
-            <p class="lead">Kết nối với bác sĩ chuyên khoa, nhận tư vấn sức khỏe nhanh chóng và an toàn.</p>
-            <a href="#" class="btn btn-light btn-lg">Tư vấn ngay</a>
-        </div>
-    </section>
+  <section class="hero bg-primary text-white text-center py-5">
+    <div class="container">
+      <h1 class="display-4">Tư Vấn Y Tế Trực Tuyến</h1>
+      <p class="lead">Kết nối với bác sĩ chuyên khoa, nhận tư vấn sức khỏe nhanh chóng và an toàn.</p>
+<a href="#" class="btn btn-light btn-lg">Tư vấn ngay</a>
+    </div>
+  </section>
+
   <!-- Main Content -->
   <section class="main-content py-5">
     <div class="container">
@@ -112,37 +124,88 @@
             </div>
           </div>
         </div>
-         <div class="col-lg-4">
-          <!-- Tìm cơ sở y tế -->
-          <h2 class="mb-4">Tìm cơ sở y tế</h2>
-          <form class="mb-4">
+        <!-- Right Sidebar -->
+        <div class="col-lg-4">
+<h2 class="mb-4">Tìm cơ sở y tế</h2>
+          <form id="searchForm" class="mb-4">
             <div class="mb-3">
               <label for="province" class="form-label">Tỉnh/Thành phố</label>
-              <select class="form-select" id="province">
+              <select class="form-select" id="province" required>
                 <option value="">Chọn tỉnh/thành phố</option>
                 <option value="hanoi">Hà Nội</option>
                 <option value="hcm">TP. Hồ Chí Minh</option>
+                <option value="danang">Đà Nẵng</option>
+                <option value="haiphong">Hải Phòng</option>
+                <option value="an giang">An Giang</option>
+                <option value="bac giang">Bắc Giang</option>
+                <option value="bac kan">Bắc Kạn</option>
+                <option value="bac lieu">Bạc Liêu</option>
+                <option value="bac ninh">Bắc Ninh</option>
+                <option value="ben tre">Bến Tre</option>
+                <option value="binh dinh">Bình Định</option>
+                <option value="binh duong">Bình Dương</option>
+                <option value="binh phuoc">Bình Phước</option>
+                <option value="binh thuan">Bình Thuận</option>
+                <option value="ca mau">Cà Mau</option>
+                <option value="can tho">Cần Thơ</option>
+                <option value="cao bang">Cao Bằng</option>
+                <option value="dak lak">Đắk Lắk</option>
+                <option value="dak nong">Đắk Nông</option>
+                <option value="dien bien">Điện Biên</option>
+                <option value="dong nai">Đồng Nai</option>
+                <option value="dong thap">Đồng Tháp</option>
+                <option value="gia lai">Gia Lai</option>
+                <option value="ha giang">Hà Giang</option>
+                <option value="ha nam">Hà Nam</option>
+                <option value="ha tinh">Hà Tĩnh</option>
+                <option value="hai duong">Hải Dương</option>
+                <option value="hau giang">Hậu Giang</option>
+                <option value="hoa binh">Hòa Bình</option>
+                <option value="hung yen">Hưng Yên</option>
+                <option value="khanh hoa">Khánh Hòa</option>
+                <option value="kien giang">Kiên Giang</option>
+                <option value="kon tum">Kon Tum</option>
+                <option value="lai chau">Lai Châu</option>
+                <option value="lam dong">Lâm Đồng</option>
+                <option value="lang son">Lạng Sơn</option>
+                <option value="lao cai">Lào Cai</option>
+                <option value="long an">Long An</option>
+                <option value="nam dinh">Nam Định</option>
+                <option value="nghe an">Nghệ An</option>
+                <option value="ninh binh">Ninh Bình</option>
+                <option value="ninh thuan">Ninh Thuận</option>
+<option value="phu tho">Phú Thọ</option>
+                <option value="phu yen">Phú Yên</option>
+                <option value="quang binh">Quảng Bình</option>
+                <option value="quang nam">Quảng Nam</option>
+                <option value="quang ngai">Quảng Ngãi</option>
+                <option value="quang ninh">Quảng Ninh</option>
+                <option value="quang tri">Quảng Trị</option>
+                <option value="soc trang">Sóc Trăng</option>
+                <option value="son la">Sơn La</option>
+                <option value="tay ninh">Tây Ninh</option>
+                <option value="thai binh">Thái Bình</option>
+                <option value="thai nguyen">Thái Nguyên</option>
+                <option value="thanh hoa">Thanh Hóa</option>
+                <option value="thua thien hue">Thừa Thiên Huế</option>
+                <option value="tien giang">Tiền Giang</option>
+                <option value="tra vinh">Trà Vinh</option>
+                <option value="tuyen quang">Tuyên Quang</option>
+                <option value="vinh long">Vĩnh Long</option>
+                <option value="vinh phuc">Vĩnh Phúc</option>
+                <option value="yen bai">Yên Bái</option>
               </select>
             </div>
             <div class="mb-3">
               <label for="district" class="form-label">Quận/Huyện</label>
-              <select class="form-select" id="district">
+              <select class="form-select" id="district" required>
                 <option value="">Chọn quận/huyện</option>
               </select>
             </div>
             <button type="submit" class="btn btn-primary w-100">Xem kết quả</button>
           </form>
-
-        <!-- Right Sidebar -->
-        <div class="col-lg-4">
-          <h2 class="mb-4">Tiện ích sức khỏe</h2>
-          <ul class="list-group">
-            <li class="list-group-item"><a href="#">Khám bệnh online</a></li>
-            <li class="list-group-item"><a href="#">Tìm nhanh bác sĩ</a></li>
-            <li class="list-group-item"><a href="#">Tra cứu thông tin bệnh</a></li>
-            <li class="list-group-item"><a href="#">Tra cứu thông tin thuốc</a></li>
-            <li class="list-group-item"><a href="#">Tư vấn qua Hotline</a></li>
-          </ul>
+          <div id="map"></div>
+          <div id="directionsPanel"></div>
         </div>
       </div>
     </div>
@@ -150,25 +213,24 @@
 
   <!-- Partners -->
   <section class="partners py-5">
-        <div class="container">
-            <h2 class="mb-4">Đối tác</h2>
-            <div class="partner-slider">
-                <div class="partner-logos">
-                    <span class="partner-logo"><img src="../anh/cho ray.webp" alt=""></span>
-                    <span class="partner-logo"><img src="../anh/cần thơ.webp" alt=""></span>
-                    <span class="partner-logo"><img src="../anh/haiduong.png" alt=""></span>
-                    <span class="partner-logo"><img src="../anh/Khánh hòa.png" alt=""></span>
-                    <span class="partner-logo"><img src="../anh/Tudu.jpg" alt=""></span>
-                    <span class="partner-logo"><img src="../anh/cho ray.webp" alt=""></span>
-                    <span class="partner-logo"><img src="../anh/cần thơ.webp" alt=""></span>
-                    <span class="partner-logo"><img src="../anh/haiduong.png" alt=""></span>
-                    <span class="partner-logo"><img src="../anh/Khánh hòa.png" alt=""></span>
-                    <span class="partner-logo"><img src="../anh/Tudu.jpg" alt=""></span>
-                </div>
-            </div>
+    <div class="container">
+      <h2 class="mb-4">Đối tác</h2>
+      <div class="partner-slider">
+        <div class="partner-logos">
+          <span class="partner-logo"><img src="../anh/cho ray.webp" alt=""></span>
+          <span class="partner-logo"><img src="../anh/cần thơ.webp" alt=""></span>
+          <span class="partner-logo"><img src="../anh/haiduong.png" alt=""></span>
+          <span class="partner-logo"><img src="../anh/Khánh hòa.png" alt=""></span>
+          <span class="partner-logo"><img src="../anh/Tudu.jpg" alt=""></span>
+          <span class="partner-logo"><img src="../anh/cho ray.webp" alt=""></span>
+          <span class="partner-logo"><img src="../anh/cần thơ.webp" alt=""></span>
+          <span class="partner-logo"><img src="../anh/haiduong.png" alt=""></span>
+          <span class="partner-logo"><img src="../anh/Khánh hòa.png" alt=""></span>
+          <span class="partner-logo"><img src="../anh/Tudu.jpg" alt=""></span>
         </div>
-    </section>
-    
+      </div>
+</div>
+  </section>
 
   <!-- Newsletter -->
   <section class="newsletter py-5">
@@ -204,68 +266,6 @@
       </div>
     </div>
   </section>
-   <!-- Login Modal -->
-    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="loginModalLabel">Đăng nhập</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="mb-3">
-                            <label for="loginEmail" class="form-label">Email hoặc Số điện thoại</label>
-                            <input type="text" class="form-control" id="loginEmail" placeholder="Nhập email hoặc số điện thoại">
-                        </div>
-                        <div class="mb-3">
-                            <label for="loginPassword" class="form-label">Mật khẩu</label>
-                            <input type="password" class="form-control" id="loginPassword" placeholder="Nhập mật khẩu">
-                        </div>
-                        <div class="mb-3">
-<a href="#" class="text-primary">Quên mật khẩu?</a>
-                        </div>
-                        <button type="submit" class="btn btn-primary w-100">Đăng nhập</button>
-                    </form>
-                    <p class="mt-3 text-center">Chưa có tài khoản? <a href="#" data-bs-toggle="modal" data-bs-target="#registerModal" data-bs-dismiss="modal">Đăng ký ngay</a></p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Register Modal -->
-    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="registerModalLabel">Đăng ký</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="mb-3">
-                            <label for="registerName" class="form-label">Họ và tên</label>
-                            <input type="text" class="form-control" id="registerName" placeholder="Nhập họ và tên">
-                        </div>
-                        <div class="mb-3">
-                            <label for="registerEmail" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="registerEmail" placeholder="Nhập email">
-                        </div>
-                        <div class="mb-3">
-                            <label for="registerPassword" class="form-label">Mật khẩu</label>
-                            <input type="password" class="form-control" id="registerPassword" placeholder="Nhập mật khẩu">
-                        </div>
-                        <div class="mb-3">
-                            <label for="registerConfirmPassword" class="form-label">Xác nhận mật khẩu</label>
-                            <input type="password" class="form-control" id="registerConfirmPassword" placeholder="Xác nhận mật khẩu">
-                        </div>
-                        <button type="submit" class="btn btn-primary w-100">Đăng ký</button>
-                    </form>
-                    <p class="mt-3 text-center">Đã có tài khoản? <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-dismiss="modal">Đăng nhập ngay</a></p>
-                </div>
-            </div>
-        </div>
-    </div>
 
   <!-- Footer -->
   <footer class="bg-dark text-white text-center py-3">
@@ -273,7 +273,187 @@
   </footer>
 
   <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> 
-  <script src="scripts.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAuG-Zamr5mVBAxuFcz4z2idP7icVXBdp4&libraries=places,directions&callback=initMap" async defer></script>
+  <script>
+    let map;
+    let directionsService;
+    let directionsRenderer;
+
+    function initMap() {
+      map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 12,
+      });
+      directionsService = new google.maps.DirectionsService();
+      directionsRenderer = new google.maps.DirectionsRenderer();
+      directionsRenderer.setMap(map);
+      directionsRenderer.setPanel(document.getElementById("directionsPanel"));
+    }
+
+    const districtsByProvince = {
+      "hanoi": ["Ba Đình", "Hoàn Kiếm", "Tây Hồ", "Long Biên", "Cầu Giấy", "Đống Đa", "Hai Bà Trưng", "Hoàng Mai", "Thanh Xuân"],
+      "hcm": ["Quận 1", "Quận 2", "Quận 3", "Quận 4", "Quận 5", "Quận 6", "Quận 7", "Quận 8", "Quận 9", "Quận 10", "Quận 11", "Quận 12", "Bình Thạnh", "Gò Vấp", "Tân Bình", "Tân Phú", "Phú Nhuận", "Thủ Đức"],
+      "danang": ["Hải Châu", "Thanh Khê", "Sơn Trà", "Ngũ Hành Sơn", "Liên Chiểu", "Cẩm Lệ", "Hoàng Sa"],
+      "haiphong": ["Hồng Bàng", "Ngô Quyền", "Lê Chân", "Hải An", "Kiến An", "Đồ Sơn", "Dương Kinh"],
+"an giang": ["Long Xuyên", "Châu Đốc", "Tri Tôn", "Tân Châu"],
+      "bac giang": ["Bắc Giang", "Yên Dũng", "Lục Nam", "Việt Yên"],
+      "bac kan": ["Bắc Kạn", "Ba Bể", "Na Rì", "Chợ Đồn"],
+      "bac lieu": ["Bạc Liêu", "Hồng Dân", "Phước Long", "Vĩnh Lợi"],
+      "bac ninh": ["Bắc Ninh", "Yên Phong", "Tiên Du", "Quế Võ"],
+      "ben tre": ["Bến Tre", "Châu Thành", "Ba Tri", "Giồng Trôm"],
+      "binh dinh": ["Quy Nhơn", "An Lão", "Hoài Nhơn", "Tây Sơn"],
+      "binh duong": ["Thủ Dầu Một", "Bến Cát", "Dĩ An", "Thuận An"],
+      "binh phuoc": ["Đồng Xoài", "Bù Đăng", "Phú Riềng", "Bù Đốp"],
+      "binh thuan": ["Phan Thiết", "Hàm Thuận Nam", "Tánh Linh", "Tuy Phong"],
+      "ca mau": ["Cà Mau", "U Minh", "Thới Bình", "Ngọc Hiển"],
+      "can tho": ["Ninh Kiều", "Cái Răng", "Bình Thủy", "Thốt Nốt"],
+      "cao bang": ["Cao Bằng", "Trùng Khánh", "Hà Quảng", "Quảng Uyên"],
+      "dak lak": ["Buôn Ma Thuột", "Ea Kar", "Krông Năng", "Cư M’gar"],
+      "dak nong": ["Gia Nghĩa", "Đắk Mil", "Đắk Song", "Krông Nô"],
+      "dien bien": ["Điện Biên Phủ", "Mường Lay", "Tủa Chùa", "Mường Chà"],
+      "dong nai": ["Biên Hòa", "Long Khánh", "Tân Phú", "Định Quán"],
+      "dong thap": ["Cao Lãnh", "Sa Đéc", "Hồng Ngự", "Tháp Mười"],
+      "gia lai": ["Pleiku", "An Khê", "Chư Păh", "Ia Grai"],
+      "ha giang": ["Hà Giang", "Đồng Văn", "Mèo Vạc", "Quản Bạ"],
+      "ha nam": ["Phủ Lý", "Bình Lục", "Lý Nhân", "Duy Tiên"],
+      "ha tinh": ["Hà Tĩnh", "Hồng Lĩnh", "Cẩm Xuyên", "Thạch Hà"],
+      "hai duong": ["Hải Dương", "Chí Linh", "Tứ Kỳ", "Nam Sách"],
+      "hau giang": ["Vị Thanh", "Long Mỹ", "Châu Thành A", "Châu Thành"],
+      "hoa binh": ["Hòa Bình", "Mai Châu", "Đà Bắc", "Lạc Thủy"],
+      "hung yen": ["Hưng Yên", "Văn Lâm", "Khoái Châu", "Mỹ Hào"],
+      "khanh hoa": ["Nha Trang", "Cam Ranh", "Diên Khánh", "Vạn Ninh"],
+      "kien giang": ["Rạch Giá", "Hà Tiên", "Kiên Lương", "Giồng Riềng"],
+      "kon tum": ["Kon Tum", "Đắk Hà", "Ngọc Hồi", "Sa Thầy"],
+      "lai chau": ["Lai Châu", "Tam Đường", "Sìn Hồ", "Phong Thổ"],
+      "lam dong": ["Đà Lạt", "Bảo Lộc", "Đơn Dương", "Lạc Dương"],
+      "lang son": ["Lạng Sơn", "Bắc Sơn", "Văn Lãng", "Cao Lộc"],
+      "lao cai": ["Lào Cai", "Sa Pa", "Bát Xát", "Văn Bàn"],
+      "long an": ["Tân An", "Cần Giuộc", "Cần Đước", "Đức Hòa"],
+      "nam dinh": ["Nam Định", "Mỹ Lộc", "Vụ Bản", "Ý Yên"],
+      "nghe an": ["Vinh", "Thái Hòa", "Quỳnh Lưu", "Diễn Châu"],
+      "ninh binh": ["Ninh Bình", "Tam Điệp", "Yên Khánh", "Hoa Lư"],
+      "ninh thuan": ["Phan Rang-Tháp Chàm", "Ninh Hải", "Bác Ái", "Thuận Bắc"],
+      "phu tho": ["Việt Trì", "Phú Thọ", "Tân Sơn", "Lâm Thao"],
+      "phu yen": ["Tuy Hòa", "Sông Cầu", "Đồng Xuân", "Tuy An"],
+"quang binh": ["Đồng Hới", "Ba Đồn", "Quảng Ninh", "Lệ Thủy"],
+      "quang nam": ["Tam Kỳ", "Hội An", "Điện Bàn", "Duy Xuyên"],
+      "quang ngai": ["Quảng Ngãi", "Bình Sơn", "Sơn Tịnh", "Trà Bồng"],
+      "quang ninh": ["Hạ Long", "Cẩm Phả", "Uông Bí", "Quảng Yên"],
+      "quang tri": ["Đông Hà", "Quảng Trị", "Vĩnh Linh", "Hải Lăng"],
+      "soc trang": ["Sóc Trăng", "Ngã Năm", "Châu Thành", "Kế Sách"],
+      "son la": ["Sơn La", "Mộc Châu", "Yên Châu", "Mai Sơn"],
+      "tay ninh": ["Tây Ninh", "Gò Dầu", "Trảng Bàng", "Dương Minh Châu"],
+      "thai binh": ["Thái Bình", "Vũ Thư", "Đông Hưng", "Kiến Xương"],
+      "thai nguyen": ["Thái Nguyên", "Sông Công", "Định Hóa", "Phú Lương"],
+      "thanh hoa": ["Thanh Hóa", "Bỉm Sơn", "Sầm Sơn", "Yên Định"],
+      "thua thien hue": ["Huế", "Phong Điền", "Quảng Điền", "Phú Vang"],
+      "tien giang": ["Mỹ Tho", "Gò Công", "Cái Bè", "Châu Thành"],
+      "tra vinh": ["Trà Vinh", "Duyên Hải", "Càng Long", "Tiểu Cần"],
+      "tuyen quang": ["Tuyên Quang", "Hàm Yên", "Sơn Dương", "Yên Sơn"],
+      "vinh long": ["Vĩnh Long", "Long Hồ", "Mang Thít", "Tam Bình"],
+      "vinh phuc": ["Vĩnh Yên", "Phúc Yên", "Tam Đảo", "Lập Thạch"],
+      "yen bai": ["Yên Bái", "Nghĩa Lộ", "Trấn Yên", "Văn Yên"]
+    };
+
+    document.getElementById('province').addEventListener('change', function() {
+      const province = this.value;
+      const districtSelect = document.getElementById('district');
+      districtSelect.innerHTML = '<option value="">Chọn quận/huyện</option>';
+
+      if (districtsByProvince[province]) {
+        districtsByProvince[province].forEach(district => {
+          const option = document.createElement('option');
+          option.value = district.toLowerCase().replace(/\s/g, '');
+          option.textContent = district;
+          districtSelect.appendChild(option);
+        });
+      }
+    });
+
+    document.getElementById('searchForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const province = document.getElementById('province').value;
+      const district = document.getElementById('district').value;
+
+      if (province && district) {
+        const geocoder = new google.maps.Geocoder();
+        const address = `${district}, ${province === 'hcm' ? 'TP. Hồ Chí Minh' : province === 'hanoi' ? 'Hà Nội' : province === 'danang' ? 'Đà Nẵng' : province === 'haiphong' ? 'Hải Phòng' : province.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}`;
+        
+        geocoder.geocode({ address: address }, (results, status) => {
+          if (status === 'OK') {
+            if (!map) initMap();
+            map.setCenter(results[0].geometry.location);
+
+            // Tìm kiếm cơ sở y tế gần nhất
+            const service = new google.maps.places.PlacesService(map);
+            const request = {
+location: results[0].geometry.location,
+              radius: '5000', // Bán kính 5km
+              type: ['hospital', 'health'],
+            };
+
+            service.nearbySearch(request, (results, status) => {
+              if (status === google.maps.places.PlacesServiceStatus.OK && results.length > 0) {
+                const nearestHospital = results[0];
+                map.setCenter(nearestHospital.geometry.location);
+                createMarker(nearestHospital);
+
+                // Lấy vị trí người dùng (dùng geolocation nếu có)
+                if (navigator.geolocation) {
+                  navigator.geolocation.getCurrentPosition(
+                    (position) => {
+                      const origin = {
+                        lat: position.coords.latitude,
+                        lng: position.coords.longitude,
+                      };
+                      const destination = nearestHospital.geometry.location;
+
+                      // Tính toán đường đi
+                      const requestDirections = {
+                        origin: origin,
+                        destination: destination,
+                        travelMode: 'DRIVING',
+                      };
+
+                      directionsService.route(requestDirections, (result, status) => {
+                        if (status === 'OK') {
+                          directionsRenderer.setDirections(result);
+                        } else {
+                          alert('Không thể tính đường đi. Lỗi: ' + status);
+                        }
+                      });
+                    },
+                    () => {
+                      alert('Không thể lấy vị trí của bạn. Vui lòng bật định vị hoặc nhập thủ công!');
+                    }
+                  );
+                } else {
+                  alert('Trình duyệt không hỗ trợ định vị. Vui lòng nhập thủ công điểm xuất phát.');
+                }
+              } else {
+                alert('Không tìm thấy cơ sở y tế gần đây! Lỗi: ' + status);
+              }
+            });
+          } else {
+            alert('Không tìm thấy địa chỉ. Lỗi: ' + status);
+          }
+        });
+      } else {
+        alert('Vui lòng chọn tỉnh/thành phố và quận/huyện!');
+      }
+    });
+
+    function createMarker(place) {
+      const marker = new google.maps.Marker({
+        map: map,
+        position: place.geometry.location,
+        title: place.name,
+      });
+      const infowindow = new google.maps.InfoWindow({
+        content: place.name,
+      });
+      infowindow.open(map, marker); // Sử dụng marker vừa tạo
+    }
+  </script>
 </body>
 </html>
