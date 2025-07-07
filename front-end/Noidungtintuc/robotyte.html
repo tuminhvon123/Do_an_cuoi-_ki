@@ -7,17 +7,17 @@
     <title>Tin Tức - Y Tế Online</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:it...lay=swap"
+        href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles.css">
-     <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0" />
+    <link rel="stylesheet" href="/front-end/styles.css">
 </head>
 
 <body>
@@ -25,12 +25,14 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
         <div class="container">
             <!-- Left: Website Name -->
-            <a class="navbar-brand" href="../index.html"><i class="fas fa-clinic-medical"></i> Y Tế Online</a>
+            <a class="navbar-brand" href="/indexx.html"><i class="fas fa-clinic-medical"></i> Y Tế
+                Online</a>
 
             <!-- Center: Search Bar -->
             <div class="mx-auto" id="searchContainer">
                 <form class="d-flex" id="searchForm">
-                    <input class="form-control me-2" type="search" placeholder="Tìm bác sĩ, triệu chứng..." aria-label="Search" id="searchInput">
+                    <input class="form-control me-2" type="search" placeholder="Tìm bác sĩ, triệu chứng..."
+                        aria-label="Search" id="searchInput">
                     <button class="btn btn-outline-primary" type="submit"><i class="fas fa-search"></i></button>
                 </form>
             </div>
@@ -41,37 +43,37 @@
                     <i class="fas fa-phone-alt me-2"></i>Hotline 24/7:
                     <a href="tel:0797588054" class="text-primary text-decoration-none">0797588054</a>
                 </span>
-                <button class="btn btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#loginModal">Đăng nhập</button>
+                <button class="btn btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#loginModal">Đăng
+                    nhập</button>
               
             </div>
         </div>
     </nav>
 
-    <!-- Menu (Mục lục) -->
+   <!-- Menu (Mục lục) -->
     <nav class="sub-menu bg-white shadow-sm py-2">
         <div class="container">
             <ul class="nav nav-pills nav-fill">
                 <li class="nav-item">
-                    <a class="nav-link" href="../index.html">Trang chủ</a>
+                    <a class="nav-link" href="/index.html">Trang chủ</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="tintuc.html">Tin tức</a>
+                    <a class="nav-link active" href="/front-end/tintuc.html">Tin tức</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="chatvoibacsi.html">Chat với bác sĩ</a>
+                    <a class="nav-link" href="#">Chat với bác sĩ</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="camnang.html">Cẩm nang sức khỏe</a>
-                </li>
-               
-                <li class="nav-item">
-                    <a class="nav-link" href="benh.html">Bệnh</a>
+                    <a class="nav-link" href="/front-end/camnang.html">Cẩm nang sức khỏe</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="thuoc.html">Thuốc</a>
+                    <a class="nav-link" href="/front-end/benh.html">Bệnh</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="cosoyte.html">Cơ sở y tế</a>
+                    <a class="nav-link" href="/front-end/thuoc.html">Thuốc</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/front-end/cosoyte.html">Cơ sở y tế</a>
                 </li>
             </ul>
         </div>
@@ -86,136 +88,136 @@
         </div>
     </section>
 
-<!-- Nội dung chính -->
-<section class="main-content py-5">
-    <div class="container">
-        <div class="row">
-            <!-- Left Column (2/3) -->
-            <div class="col-lg-8">
-                <!-- Tin tức nổi bật -->
-                <h2 class="mb-4">Tin tức nổi bật</h2>
-                <div class="row" id="featuredNews">
-                    <div class="col-md-12 mb-4 item" data-title="Sốt xuất huyết gia tăng tại TP.HCM">
-                        <div class="card">
-                            <a href="../front-end/Noidungtintuc/sotxuathuyet.html">
-                                <img src="../anh/sốt xuat huyet.png" class="card-img-top" alt="Sốt xuất huyết TP.HCM">
-                            </a>
-                            <div class="card-body">
-                                <a href="../front-end/Noidungtintuc/sotxuathuyet.html">
-                                    <h5 class="card-title">Sốt xuất huyết gia tăng tại TP.HCM <span class="source">(Nguồn: HCDC, 01/07/2025)</span></h5>
-                                </a>
-                                <p class="card-text">Tính đến tuần thứ 7/2025, TP.HCM ghi nhận 3.431 ca, tăng 125,3% so với cùng kỳ 2024.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-12 mb-4 item" data-title="Cảnh báo nắng nóng tại miền Bắc">
-                        <div class="card">
-                            <a href="../front-end/Noidungtintuc/canhbaonangnong.html">
-                                <img src="../anh/năng nóng.webp" class="card-img-top" alt="Nắng nóng miền Bắc">
-                            </a>
-                            <div class="card-body">
-                                <a href="../front-end/Noidungtintuc/canhbaonangnong.html">
-                                    <h5 class="card-title">Cảnh báo nắng nóng tại miền Bắc <span class="source">(Nguồn: Bộ Y tế, 25/06/2025)</span></h5>
-                                </a>
-                                <p class="card-text">Nhiệt độ tại Hà Nội đạt 38°C, Bộ Y tế khuyến cáo phòng tránh sốc nhiệt.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <section class="main-content py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Cột trái: Chi tiết tin tức và gợi ý -->
+                <!-- Cột trái: Chi tiết tin tức và gợi ý -->
+                <div class="col-lg-8">
+                    <h2 class="mb-4 text-success fw-bold">Bệnh viện Chợ Rẫy ứng dụng Robot phẫu thuật Da Vinci</h2>
+                    <p class="source">Nguồn: BV Chợ Rẫy – Ngày 01/06/2025</p>
+                    <img src="/anh/robot y tế.webp" alt="Robot phẫu thuật Da Vinci" class="img-fluid mb-4">
 
-                <!-- Tin tức mới nhất -->
-                <h2 class="mb-4 mt-5">Tin tức mới nhất</h2>
-                <div class="row" id="latestNews">
-                    <div class="col-md-6 mb-4 item" data-title="Chiến dịch tiêm vắc-xin sốt xuất huyết">
-                        <div class="card">
-                            <a href="../front-end/Noidungtintuc/chiendichsotxuathuyet.html">
-                                <img src="../anh/tiemchung.webp" class="card-img-top" alt="Vắc-xin sốt xuất huyết">
-                            </a>
-                            <div class="card-body">
-                                <a href="../front-end/Noidungtintuc/chiendichsotxuathuyet.html">
-                                    <h5 class="card-title">Chiến dịch tiêm vắc-xin sốt xuất huyết <span class="source">(Nguồn: Bộ Y tế, 15/05/2024)</span></h5>
+                    <p><strong>TP.HCM, 01/06/2025</strong> – Bệnh viện Chợ Rẫy chính thức triển khai hệ thống robot phẫu
+                        thuật Da Vinci – công nghệ hiện đại bậc nhất hiện nay trong lĩnh vực phẫu thuật nội soi. Đây là
+                        bước đột phá trong việc nâng cao độ chính xác và an toàn cho người bệnh.</p>
+
+                    <h4 class="mt-4 text-warning">Ưu điểm nổi bật của Da Vinci</h4>
+                    <ul>
+                        <li>Cho phép thực hiện các thao tác phức tạp qua lỗ nhỏ với độ chính xác cao.</li>
+                        <li>Hạn chế tối đa xâm lấn, giảm đau sau mổ và rút ngắn thời gian phục hồi.</li>
+                        <li>Camera 3D phóng đại hình ảnh gấp 10 lần giúp bác sĩ quan sát rõ cấu trúc mô mềm.</li>
+                        <li>Tay máy robot mô phỏng chính xác chuyển động tay người, loại bỏ run tay.</li>
+                    </ul>
+
+                    <h4 class="mt-4 text-danger">Ứng dụng trong điều trị</h4>
+                    <p>Hệ thống robot được áp dụng cho nhiều loại phẫu thuật như: tiết niệu, sản phụ khoa, tim mạch và
+                        tiêu hóa. Trong tháng đầu triển khai, đã có hơn <strong>30 ca mổ</strong> được thực hiện thành
+                        công, bao gồm cắt tử cung, cắt tuyến tiền liệt và nối thông mạch.</p>
+
+                    <div class="alert alert-success">
+                        <strong>🤖 Nhận định từ chuyên gia:</strong>
+                        <ul>
+                            <li>Robot Da Vinci không thay thế bác sĩ, mà hỗ trợ nâng cao hiệu quả điều trị.</li>
+                            <li>Đội ngũ bác sĩ được đào tạo bài bản từ Hoa Kỳ và Singapore.</li>
+                            <li>Hệ thống giúp bệnh viện tiến gần hơn với tiêu chuẩn y tế quốc tế.</li>
+                        </ul>
+                    </div>
+
+                    <h4 class="mt-4 text-primary">Kế hoạch mở rộng</h4>
+                    <ul>
+                        <li>Dự kiến mở rộng robot phẫu thuật đến các bệnh viện tuyến trung ương tại miền Bắc và miền
+                            Trung.</li>
+                        <li>Tiến tới phổ biến kỹ thuật robot tại các cơ sở y tế có điều kiện về nhân lực và trang thiết
+                            bị.</li>
+                        <li>Hỗ trợ chi phí điều trị thông qua bảo hiểm y tế và các chương trình hợp tác quốc tế.</li>
+                    </ul>
+
+                    <div class="bg-light p-3 border-start border-success border-4 mt-4">
+                        <strong>Kết luận:</strong> Ứng dụng robot phẫu thuật Da Vinci tại Chợ Rẫy đánh dấu bước ngoặt
+                        trong y học hiện đại tại Việt Nam. Đây là minh chứng cho sự tiến bộ không ngừng của ngành y tế
+                        nước nhà, mang lại hy vọng điều trị hiệu quả và an toàn hơn cho người bệnh.
+                    </div>
+
+                    <p class="text-muted mt-4">Nguồn: <a href="https://choray.vn" target="_blank">Bệnh viện Chợ Rẫy</a>
+                    </p>
+
+
+                    <!-- Có thể bạn quan tâm -->
+                    <h2 class="mb-4 mt-5">Có thể bạn quan tâm</h2>
+                    <div class="row" id="recommendedNews">
+                        <div class="col-md-6 mb-4 item" data-title="Dinh dưỡng cho người cao tuổi">
+                            <div class="card">
+                                <a href="/front-end/Noidungtintuc/dinhduong.html">
+                                    <img src="/anh/dinh dưỡng người cao tuổi.webp" class="card-img-top"
+                                        alt="Dinh dưỡng người cao tuổi">
                                 </a>
-                                <p class="card-text">Vắc-xin Qdenga triển khai tại TP.HCM từ tháng 9/2024, mở rộng toàn quốc.</p>
+                                <div class="card-body">
+                                    <a href="/front-end/Noidungtintuc/dinhduong.html">
+                                        <h5 class="card-title">Dinh dưỡng cho người cao tuổi <span
+                                                class="source">(Nguồn: Bộ
+                                                Y tế, 2024)</span></h5>
+                                    </a>
+                                    <p class="card-text">Canxi và omega-3 giúp giảm loãng xương, theo khuyến nghị Bộ Y
+                                        tế.
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-6 mb-4 item" data-title="Tăng ca bệnh tim mạch">
+
+                        <div class="col-md-6 mb-4 item" data-title="Sức khỏe tinh thần trong mùa dịch">
+                            <div class="card">
+                                <a href="/front-end/Noidungtintuc/muadich.html">
+                                    <img src="/anh/mua dịch.webp" class="card-img-top"
+                                        alt="Sức khỏe tinh thần">
+                                </a>
+                                <div class="card-body">
+                                    <a href="/front-end/Noidungtintuc/muadich.html">
+                                        <h5 class="card-title">Sức khỏe tinh thần trong mùa dịch <span
+                                                class="source">(Nguồn: Bộ Y tế, 2023)</span></h5>
+                                    </a>
+                                    <p class="card-text">Thiền và tư vấn tâm lý được khuyến khích để giảm căng thẳng.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                     <div class="col-md-6 mb-4 item" data-title="Tăng ca bệnh tim mạch">
                         <div class="card">
-                            <a href="../front-end/Noidungtintuc/timmach.html">
-                                <img src="../anh/tim mach.webp" class="card-img-top" alt="Bệnh tim mạch">
+                            <a href="/front-end/Noidungtintuc/timmach.html">
+                                <img src="/anh/tim mach.webp" class="card-img-top" alt="Bệnh tim mạch">
                             </a>
                             <div class="card-body">
-                                <a href="../front-end/Noidungtintuc/timmach.html">
+                                <a href="/front-end/Noidungtintuc/timmach.html">
                                     <h5 class="card-title">Tăng ca bệnh tim mạch <span class="source">(Nguồn: Bộ Y tế, 01/07/2025)</span></h5>
                                 </a>
                                 <p class="card-text">Hơn 4 triệu người tại Việt Nam mắc bệnh hô hấp mạn tính, tăng 5% năm 2025.</p>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Có thể bạn quan tâm -->
-                <h2 class="mb-4 mt-5">Có thể bạn quan tâm</h2>
-                <div class="row" id="recommendedNews">
-                    <div class="col-md-6 mb-4 item" data-title="Dinh dưỡng cho người cao tuổi">
-                        <div class="card">
-                            <a href="../front-end/Noidungtintuc/dinhduong.html">
-                               <img src="../anh/dinh dưỡng người cao tuổi.webp" class="card-img-top" alt="Dinh dưỡng người cao tuổi">
-                            </a>
-                            <div class="card-body">
-                                <a href="../front-end/Noidungtintuc/dinhduong.html">
-                                    <h5 class="card-title">Dinh dưỡng cho người cao tuổi <span class="source">(Nguồn: Bộ Y tế, 2024)</span></h5>
+                        <div class="col-md-6 mb-4 item" data-title="Nguy cơ sốc nhiệt">
+                            <div class="card">
+                                <a href="/front-end/Noidungtintuc/socnhiet.html">
+                                    <img src="/anh/sốc nhiệt.webp" class="card-img-top"
+                                        alt="Nguy cơ sốc nhiệt">
                                 </a>
-                                <p class="card-text">Canxi và omega-3 giúp giảm loãng xương, theo khuyến nghị Bộ Y tế.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 mb-4 item" data-title="Sức khỏe tinh thần trong mùa dịch">
-                        <div class="card">
-                            <a href="../front-end/Noidungtintuc/muadich.html">
-                                <img src="../anh/mua dịch.webp" class="card-img-top" alt="Sức khỏe tinh thần">
-                            </a>
-                            <div class="card-body">
-                                <a href="../front-end/Noidungtintuc/muadich.html">
-                                    <h5 class="card-title">Sức khỏe tinh thần trong mùa dịch <span class="source">(Nguồn: Bộ Y tế, 2023)</span></h5>
-                                </a>
-                                <p class="card-text">Thiền và tư vấn tâm lý được khuyến khích để giảm căng thẳng.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 mb-4 item" data-title="Robot phẫu thuật tại Chợ Rẫy">
-                        <div class="card">
-                            <a href="../front-end/Noidungtintuc/robotyte.html">
-                                <img src="../anh/robot y tế.webp" class="card-img-top" alt="Robot phẫu thuật">
-                            </a>
-                            <div class="card-body">
-                                <a href="../front-end/Noidungtintuc/robotyte.html">
-                                    <h5 class="card-title">Robot phẫu thuật tại Chợ Rẫy <span class="source">(Nguồn: BV Chợ Rẫy, 01/06/2025)</span></h5>
-                                </a>
-                                <p class="card-text">Da Vinci áp dụng từ tháng 6/2025, tăng độ chính xác phẫu thuật.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 mb-4 item" data-title="Nguy cơ sốc nhiệt">
-                        <div class="card">
-                            <a href="../front-end/Noidungtintuc/socnhiet.html">
-                                <img src="../anh/sốc nhiệt.webp" class="card-img-top" alt="Nguy cơ sốc nhiệt">
-                            </a>
-                            <div class="card-body">
-                                <a href="../front-end/Noidungtintuc/socnhiet.html">
-                                  <h5 class="card-title">Nguy cơ sốc nhiệt <span class="source">(Nguồn: Bộ Y tế, 25/06/2025)</span></h5>
-                                </a>
-                                <p class="card-text">Tăng ca sốc nhiệt do nắng nóng, khuyến cáo tránh ngoài trời từ 10h-15h.</p>
+                                <div class="card-body">
+                                    <a href="/front-end/Noidungtintuc/socnhiet.html">
+                                        <h5 class="card-title">Nguy cơ sốc nhiệt <span class="source">(Nguồn: Bộ Y tế,
+                                                25/06/2025)</span></h5>
+                                    </a>
+                                    <p class="card-text">Tăng ca sốc nhiệt do nắng nóng, khuyến cáo tránh ngoài trời từ
+                                        10h-15h.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-           
-                <!-- Thanh bên phải (1/3) -->
+                <!-- Cột phải: Thanh tiện ích -->
                 <div class="col-lg-4">
-                    <!-- Find Medical Facility -->
+                    <!-- Tìm cơ sở y tế -->
                     <h2 class="mb-4">Tìm cơ sở y tế</h2>
                     <form class="mb-4">
                         <div class="mb-3">
@@ -240,19 +242,19 @@
                         <button type="submit" class="btn btn-primary w-100">Xem kết quả</button>
                     </form>
 
-                    <!-- Online Consultation -->
+                    <!-- Khám bệnh online -->
                     <h2 class="mb-4">Khám bệnh online</h2>
                     <a href="#" class="btn btn-primary w-100 mb-4">Đăng ký nhanh</a>
 
-                    <!-- Health Utilities -->
+                    <!-- Tiện ích sức khỏe -->
                     <h2 class="mb-4">Tiện ích sức khỏe</h2>
                     <ul class="list-group">
                         <li class="list-group-item"><a href="#">Khám bệnh online</a></li>
                         <li class="list-group-item"><a href="#">Hỏi đáp dịch vụ y</a></li>
-                        <li class="list-group-item"><a href="tel:19001234">Tư vấn qua Hotline</a></li>
+                        <li class="list-group-item"><a href="tel:0797588054">Tư vấn qua Hotline</a></li>
                         <li class="list-group-item"><a href="#">Gửi câu hỏi qua Messenger</a></li>
                         <li class="list-group-item"><a href="#">Tìm nhanh bác sĩ</a></li>
-<li class="list-group-item"><a href="#">Tìm nhanh bệnh viện</a></li>
+                        <li class="list-group-item"><a href="#">Tìm nhanh bệnh viện</a></li>
                         <li class="list-group-item"><a href="#">Tra cứu thông tin bệnh</a></li>
                         <li class="list-group-item"><a href="#">Tra cứu thông tin thuốc</a></li>
                     </ul>
@@ -264,44 +266,19 @@
     <!-- Đối tác -->
     <section class="partners py-5">
         <div class="container">
-            <h2 class="mb-4">Đối tác</h2>
+            <h2 class="mb-4">Đối tác</h2> 
             <div class="partner-slider">
                 <div class="partner-logos">
-                    <span class="partner-logo"><img src="../anh/cho ray.webp" alt=""></span>
-                    <span class="partner-logo"><img src="../anh/cần thơ.webp" alt=""></span>
-                    <span class="partner-logo"><img src="../anh/haiduong.png" alt=""></span>
-                    <span class="partner-logo"><img src="../anh/Khánh hòa.png" alt=""></span>
-                    <span class="partner-logo"><img src="../anh/Tudu.jpg" alt=""></span>
-                    <span class="partner-logo"><img src="../anh/cho ray.webp" alt=""></span>
-                    <span class="partner-logo"><img src="../anh/cần thơ.webp" alt=""></span>
-                    <span class="partner-logo"><img src="../anh/haiduong.png" alt=""></span>
-                    <span class="partner-logo"><img src="../anh/Khánh hòa.png" alt=""></span>
-                    <span class="partner-logo"><img src="../anh/Tudu.jpg" alt=""></span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-     <!-- Dịch vụ -->
-    <section class="features py-5">
-        <div class="container">
-            <h2 class="text-center mb-4">Dịch Vụ Của Chúng Tôi</h2>
-            <div class="row">
-                <div class="col-md-4 text-center">
-                    <i class="fas fa-comment-medical fa-3x mb-3 text-primary"></i>
-                    <h5>Tư Vấn Trực Tuyến</h5>
-                    <p>Trao đổi với bác sĩ qua video hoặc chat, mọi lúc, mọi nơi.</p>
-                </div>
-                <div class="col-md-4 text-center">
-                    <i class="fas fa-calendar-check fa-3x mb-3 text-primary"></i>
-                    <h5>Đặt Lịch Khám</h5>
-                    <p>Đặt lịch với bác sĩ hoặc phòng khám gần bạn chỉ với vài cú nhấp chuột.</p>
-                </div>
-                <div class="col-md-4 text-center">
-                    <i class="fas fa-book-medical fa-3x mb-3 text-primary"></i>
-                    <h5>Kiến Thức Y Tế</h5>
-                    <p>Truy cập thư viện bài viết và video về sức khỏe đáng tin cậy.</p>
+                    <span class="partner-logo"><img src="/anh/cho ray.webp" alt=""></span>
+                    <span class="partner-logo"><img src="/anh/cần thơ.webp" alt=""></span>
+                    <span class="partner-logo"><img src="/anh/haiduong.png" alt=""></span>
+                    <span class="partner-logo"><img src="/anh/Khánh hòa.png" alt=""></span>
+                    <span class="partner-logo"><img src="/anh/Tudu.jpg" alt=""></span>
+                    <span class="partner-logo"><img src="/anh/cho ray.webp" alt=""></span>
+                    <span class="partner-logo"><img src="/anh/cần thơ.webp" alt=""></span>
+                    <span class="partner-logo"><img src="/anh/haiduong.png" alt=""></span>
+                    <span class="partner-logo"><img src="/anh/Khánh hòa.png" alt=""></span>
+                    <span class="partner-logo"><img src="/anh/Tudu.jpg" alt=""></span>
                 </div>
             </div>
         </div>
@@ -311,7 +288,7 @@
     <section class="newsletter py-5">
         <div class="container">
             <div class="row">
-<div class="col-12">
+                <div class="col-12">
                     <h2 class="mb-4">Đăng ký nhận bản tin sức khỏe</h2>
                     <form class="d-flex mb-4" onsubmit="handleNewsletterSignup(event)">
                         <input type="email" class="form-control me-2" placeholder="Nhập email của bạn" required>
@@ -322,7 +299,8 @@
         </div>
     </section>
 
-    <!-- Chatbox AI -->
+
+    <!-- Chatbot Toggler -->
     <button id="chatbot-toggler">
         <span class="material-symbols-rounded">mode_comment</span>
         <span class="material-symbols-rounded">close</span>
@@ -346,7 +324,7 @@
                 <svg class="bot-avatar" xmlns="http://www.w3.org/2000/svg" width="50" height="50"
                     viewBox="0 0 1024 1024">
                     <path
-d="M738.3 287.6H285.7c-59 0-106.8 47.8-106.8 106.8v303.1c0 59 47.8 106.8 106.8 106.8h81.5v111.1c0 .7.8 1.1 1.4.7l166.9-110.6 41.8-.8h117.4l43.6-.4c59 0 106.8-47.8 106.8-106.8V394.5c0-59-47.8-106.9-106.8-106.9zM351.7 448.2c0-29.5 23.9-53.5 53.5-53.5s53.5 23.9 53.5 53.5-23.9 53.5-53.5 53.5-53.5-23.9-53.5-53.5zm157.9 267.1c-67.8 0-123.8-47.5-132.3-109h264.6c-8.6 61.5-64.5 109-132.3 109zm110-213.7c-29.5 0-53.5-23.9-53.5-53.5s23.9-53.5 53.5-53.5 53.5 23.9 53.5 53.5-23.9 53.5-53.5 53.5zM867.2 644.5V453.1h26.5c19.4 0 35.1 15.7 35.1 35.1v121.1c0 19.4-15.7 35.1-35.1 35.1h-26.5zM95.2 609.4V488.2c0-19.4 15.7-35.1 35.1-35.1h26.5v191.3h-26.5c-19.4 0-35.1-15.7-35.1-35.1zM561.5 149.6c0 23.4-15.6 43.3-36.9 49.7v44.9h-30v-44.9c-21.4-6.5-36.9-26.3-36.9-49.7 0-28.6 23.3-51.9 51.9-51.9s51.9 23.3 51.9 51.9z" />
+                        d="M738.3 287.6H285.7c-59 0-106.8 47.8-106.8 106.8v303.1c0 59 47.8 106.8 106.8 106.8h81.5v111.1c0 .7.8 1.1 1.4.7l166.9-110.6 41.8-.8h117.4l43.6-.4c59 0 106.8-47.8 106.8-106.8V394.5c0-59-47.8-106.9-106.8-106.9zM351.7 448.2c0-29.5 23.9-53.5 53.5-53.5s53.5 23.9 53.5 53.5-23.9 53.5-53.5 53.5-53.5-23.9-53.5-53.5zm157.9 267.1c-67.8 0-123.8-47.5-132.3-109h264.6c-8.6 61.5-64.5 109-132.3 109zm110-213.7c-29.5 0-53.5-23.9-53.5-53.5s23.9-53.5 53.5-53.5 53.5 23.9 53.5 53.5-23.9 53.5-53.5 53.5zM867.2 644.5V453.1h26.5c19.4 0 35.1 15.7 35.1 35.1v121.1c0 19.4-15.7 35.1-35.1 35.1h-26.5zM95.2 609.4V488.2c0-19.4 15.7-35.1 35.1-35.1h26.5v191.3h-26.5c-19.4 0-35.1-15.7-35.1-35.1zM561.5 149.6c0 23.4-15.6 43.3-36.9 49.7v44.9h-30v-44.9c-21.4-6.5-36.9-26.3-36.9-49.7 0-28.6 23.3-51.9 51.9-51.9s51.9 23.3 51.9 51.9z" />
                 </svg>
                 <!-- prettier-ignore -->
                 <div class="message-text">Xin chào 👋 <br> Tôi là trợ lý AI Nhóm 14, hỗ trợ tư vấn y tế. Bạn đang gặp
@@ -372,6 +350,10 @@ d="M738.3 287.6H285.7c-59 0-106.8 47.8-106.8 106.8v303.1c0 59 47.8 106.8 106.8 1
         </div>
     </div>
 
+    <!-- Linking Emoji Mart script for emoji picker -->
+    <script src="https://cdn.jsdelivr.net/npm/emoji-mart@latest/dist/browser.js"></script>
+    <!-- Linking for file upload functionality -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.17.2/dist/sweetalert2.all.min.js"></script>
     <!-- Login Modal -->
     <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -384,18 +366,20 @@ d="M738.3 287.6H285.7c-59 0-106.8 47.8-106.8 106.8v303.1c0 59 47.8 106.8 106.8 1
                     <form>
                         <div class="mb-3">
                             <label for="loginEmail" class="form-label">Email hoặc Số điện thoại</label>
-                            <input type="text" class="form-control" id="loginEmail" placeholder="Nhập email hoặc số điện thoại">
+                            <input type="text" class="form-control" id="loginEmail"
+                                placeholder="Nhập email hoặc số điện thoại">
                         </div>
                         <div class="mb-3">
                             <label for="loginPassword" class="form-label">Mật khẩu</label>
                             <input type="password" class="form-control" id="loginPassword" placeholder="Nhập mật khẩu">
                         </div>
                         <div class="mb-3">
-<a href="#" class="text-primary">Quên mật khẩu?</a>
+                            <a href="#" class="text-primary">Quên mật khẩu?</a>
                         </div>
                         <button type="submit" class="btn btn-primary w-100">Đăng nhập</button>
                     </form>
-                    <p class="mt-3 text-center">Chưa có tài khoản? <a href="#" data-bs-toggle="modal" data-bs-target="#registerModal" data-bs-dismiss="modal">Đăng ký ngay</a></p>
+                    <p class="mt-3 text-center">Chưa có tài khoản? <a href="#" data-bs-toggle="modal"
+                            data-bs-target="#registerModal" data-bs-dismiss="modal">Đăng ký ngay</a></p>
                 </div>
             </div>
         </div>
@@ -421,15 +405,18 @@ d="M738.3 287.6H285.7c-59 0-106.8 47.8-106.8 106.8v303.1c0 59 47.8 106.8 106.8 1
                         </div>
                         <div class="mb-3">
                             <label for="registerPassword" class="form-label">Mật khẩu</label>
-                            <input type="password" class="form-control" id="registerPassword" placeholder="Nhập mật khẩu">
+                            <input type="password" class="form-control" id="registerPassword"
+                                placeholder="Nhập mật khẩu">
                         </div>
                         <div class="mb-3">
                             <label for="registerConfirmPassword" class="form-label">Xác nhận mật khẩu</label>
-                            <input type="password" class="form-control" id="registerConfirmPassword" placeholder="Xác nhận mật khẩu">
+                            <input type="password" class="form-control" id="registerConfirmPassword"
+                                placeholder="Xác nhận mật khẩu">
                         </div>
                         <button type="submit" class="btn btn-primary w-100">Đăng ký</button>
                     </form>
-                    <p class="mt-3 text-center">Đã có tài khoản? <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-dismiss="modal">Đăng nhập ngay</a></p>
+                    <p class="mt-3 text-center">Đã có tài khoản? <a href="#" data-bs-toggle="modal"
+                            data-bs-target="#loginModal" data-bs-dismiss="modal">Đăng nhập ngay</a></p>
                 </div>
             </div>
         </div>
@@ -442,14 +429,15 @@ d="M738.3 287.6H285.7c-59 0-106.8 47.8-106.8 106.8v303.1c0 59 47.8 106.8 106.8 1
             <p>
                 <a href="#" class="text-white me-2"><i class="fab fa-facebook"></i></a>
                 <a href="#" class="text-white me-2"><i class="fab fa-twitter"></i></a>
-<a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
             </p>
         </div>
     </footer>
 
     <!-- Bootstrap JS and Popper.js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="scripts.js"></script>
+    <!-- Custom JS -->
+    <script src="/TuvanYte/front-end/scripts.js"></script>
 </body>
 
 </html>
