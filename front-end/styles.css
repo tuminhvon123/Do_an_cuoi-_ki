@@ -214,7 +214,7 @@ body {
 /* Tư vấn trực tuyến */
 
 .hero {
-    background-image: url('/anh/anh\ trang\ chu\ menu.jpg');
+    background-image: url('../anh/anh\ trang\ chu\ menu.jpg');
    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
