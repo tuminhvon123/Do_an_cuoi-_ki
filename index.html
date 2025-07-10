@@ -88,6 +88,7 @@
     </section>
 
     <!-- Login Modal -->
+    
     <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -96,29 +97,28 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form>
-                        <div class="mb-3">
-                            <label for="loginEmail" class="form-label">Email hoặc Số điện thoại</label>
-                            <input type="text" class="form-control" id="loginEmail"
-                                placeholder="Nhập email hoặc số điện thoại">
-                        </div>
-                        <div class="mb-3">
-                            <label for="loginPassword" class="form-label">Mật khẩu</label>
-                            <input type="password" class="form-control" id="loginPassword" placeholder="Nhập mật khẩu">
-                        </div>
-                        <div class="mb-3">
-                            <a href="#" class="text-primary">Quên mật khẩu?</a>
-                        </div>
-                        <button type="submit" class="btn btn-primary w-100">Đăng nhập</button>
-                    </form>
+                    <form id="loginForm" action="login.php" method="POST">
+    <div class="mb-3">
+        <label for="loginEmail" class="form-label">Email</label>
+        <input type="text" class="form-control" id="loginEmail" name="email" required>
+    </div>
+    <div class="mb-3">
+        <label for="loginPassword" class="form-label">Mật khẩu</label>
+        <input type="password" class="form-control" id="loginPassword" name="password" required>
+    </div>
+    <button type="submit" class="btn btn-primary w-100">Đăng nhập</button>
+</form>
+
                     <p class="mt-3 text-center">Chưa có tài khoản? <a href="#" data-bs-toggle="modal"
                             data-bs-target="#registerModal" data-bs-dismiss="modal">Đăng ký ngay</a></p>
                 </div>
             </div>
         </div>
     </div>
+   
 
     <!-- Register Modal -->
+     
     <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -127,33 +127,34 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form>
-                        <div class="mb-3">
-                            <label for="registerName" class="form-label">Họ và tên</label>
-                            <input type="text" class="form-control" id="registerName" placeholder="Nhập họ và tên">
-                        </div>
-                        <div class="mb-3">
-                            <label for="registerEmail" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="registerEmail" placeholder="Nhập email">
-                        </div>
-                        <div class="mb-3">
-                            <label for="registerPassword" class="form-label">Mật khẩu</label>
-                            <input type="password" class="form-control" id="registerPassword"
-                                placeholder="Nhập mật khẩu">
-                        </div>
-                        <div class="mb-3">
-                            <label for="registerConfirmPassword" class="form-label">Xác nhận mật khẩu</label>
-                            <input type="password" class="form-control" id="registerConfirmPassword"
-                                placeholder="Xác nhận mật khẩu">
-                        </div>
-                        <button type="submit" class="btn btn-primary w-100">Đăng ký</button>
-                    </form>
+                    <!-- Đặt MỘT form duy nhất trong modal-body -->
+<form id="registerForm" action="register.php" method="POST">
+    <div class="mb-3">
+        <label for="registerName" class="form-label">Họ và tên</label>
+        <input type="text" class="form-control" id="registerName" name="name" required>
+    </div>
+    <div class="mb-3">
+        <label for="registerEmail" class="form-label">Email</label>
+        <input type="email" class="form-control" id="registerEmail" name="email" required>
+    </div>
+    <div class="mb-3">
+        <label for="registerPassword" class="form-label">Mật khẩu</label>
+        <input type="password" class="form-control" id="registerPassword" name="password" required>
+    </div>
+    <div class="mb-3">
+        <label for="registerConfirmPassword" class="form-label">Xác nhận mật khẩu</label>
+        <input type="password" class="form-control" id="registerConfirmPassword" required>
+    </div>
+    <button type="submit" class="btn btn-primary w-100">Đăng ký</button>
+</form>
+
                     <p class="mt-3 text-center">Đã có tài khoản? <a href="#" data-bs-toggle="modal"
                             data-bs-target="#loginModal" data-bs-dismiss="modal">Đăng nhập ngay</a></p>
                 </div>
             </div>
         </div>
     </div>
+    
 
     <!-- Main Content -->
     <section class="main-content py-5">
@@ -337,112 +338,62 @@
         </div>
     </section>
 
- <!-- chat box -->
+  <!-- Chatbox AI -->
+    <button id="chatbot-toggler">
+        <span class="material-symbols-rounded">mode_comment</span>
+        <span class="material-symbols-rounded">close</span>
+    </button>
+    <div class="chatbot-popup">
+        <!-- Chatbot Header -->
+        <div class="chat-header">
+            <div class="header-info">
+                <svg class="chatbot-logo" xmlns="http://www.w3.org/2000/svg" width="50" height="50"
+                    viewBox="0 0 1024 1024">
+                    <path
+                        d="M738.3 287.6H285.7c-59 0-106.8 47.8-106.8 106.8v303.1c0 59 47.8 106.8 106.8 106.8h81.5v111.1c0 .7.8 1.1 1.4.7l166.9-110.6 41.8-.8h117.4l43.6-.4c59 0 106.8-47.8 106.8-106.8V394.5c0-59-47.8-106.9-106.8-106.9zM351.7 448.2c0-29.5 23.9-53.5 53.5-53.5s53.5 23.9 53.5 53.5-23.9 53.5-53.5 53.5-53.5-23.9-53.5-53.5zm157.9 267.1c-67.8 0-123.8-47.5-132.3-109h264.6c-8.6 61.5-64.5 109-132.3 109zm110-213.7c-29.5 0-53.5-23.9-53.5-53.5s23.9-53.5 53.5-53.5 53.5 23.9 53.5 53.5-23.9 53.5-53.5 53.5zM867.2 644.5V453.1h26.5c19.4 0 35.1 15.7 35.1 35.1v121.1c0 19.4-15.7 35.1-35.1 35.1h-26.5zM95.2 609.4V488.2c0-19.4 15.7-35.1 35.1-35.1h26.5v191.3h-26.5c-19.4 0-35.1-15.7-35.1-35.1zM561.5 149.6c0 23.4-15.6 43.3-36.9 49.7v44.9h-30v-44.9c-21.4-6.5-36.9-26.3-36.9-49.7 0-28.6 23.3-51.9 51.9-51.9s51.9 23.3 51.9 51.9z" />
+                </svg>
+                <h2 class="logo-text">Trợ lý ảo</h2>
+            </div>
+            <button id="close-chatbot" class="material-symbols-rounded">keyboard_arrow_down</button>
+        </div>
+        <!-- Chatbot Body -->
+        <div class="chat-body">
+            <div class="message bot-message">
+                <svg class="bot-avatar" xmlns="http://www.w3.org/2000/svg" width="50" height="50"
+                    viewBox="0 0 1024 1024">
+                    <path
+d="M738.3 287.6H285.7c-59 0-106.8 47.8-106.8 106.8v303.1c0 59 47.8 106.8 106.8 106.8h81.5v111.1c0 .7.8 1.1 1.4.7l166.9-110.6 41.8-.8h117.4l43.6-.4c59 0 106.8-47.8 106.8-106.8V394.5c0-59-47.8-106.9-106.8-106.9zM351.7 448.2c0-29.5 23.9-53.5 53.5-53.5s53.5 23.9 53.5 53.5-23.9 53.5-53.5 53.5-53.5-23.9-53.5-53.5zm157.9 267.1c-67.8 0-123.8-47.5-132.3-109h264.6c-8.6 61.5-64.5 109-132.3 109zm110-213.7c-29.5 0-53.5-23.9-53.5-53.5s23.9-53.5 53.5-53.5 53.5 23.9 53.5 53.5-23.9 53.5-53.5 53.5zM867.2 644.5V453.1h26.5c19.4 0 35.1 15.7 35.1 35.1v121.1c0 19.4-15.7 35.1-35.1 35.1h-26.5zM95.2 609.4V488.2c0-19.4 15.7-35.1 35.1-35.1h26.5v191.3h-26.5c-19.4 0-35.1-15.7-35.1-35.1zM561.5 149.6c0 23.4-15.6 43.3-36.9 49.7v44.9h-30v-44.9c-21.4-6.5-36.9-26.3-36.9-49.7 0-28.6 23.3-51.9 51.9-51.9s51.9 23.3 51.9 51.9z" />
+                </svg>
+                <!-- prettier-ignore -->
+                <div class="message-text">Xin chào 👋 <br> Tôi là trợ lý AI Nhóm 14, hỗ trợ tư vấn y tế. Bạn đang gặp
+                    vấn đề sức khỏe gì? Hãy mô tả triệu chứng để tôi giúp bạn! </div>
+            </div>
+        </div>
+        <!-- Chatbot Footer -->
+        <div class="chat-footer">
+            <form action="#" class="chat-form">
+                <textarea placeholder="Bạn đặt câu hỏi ở đây..." class="message-input" required></textarea>
+                <div class="chat-controls">
+                    <button type="button" id="emoji-picker"
+                        class="material-symbols-outlined">sentiment_satisfied</button>
+                    <div class="file-upload-wrapper">
+                        <input type="file" id="file-input" hidden />
+                        <img src="#" />
+                        <button type="button" id="file-upload" class="material-symbols-rounded">attach_file</button>
+                        <button type="button" id="file-cancel" class="material-symbols-rounded">close</button>
+                    </div>
+                    <button type="submit" id="send-message" class="material-symbols-rounded">arrow_upward</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
-<div id="chatbox" style="position: fixed; bottom: 20px; right: 20px; width: 300px;">
-    <div style="background-color: #0d6efd; color: white; padding: 10px;">Chat với Trợ lý AI</div>
-    <div id="chatArea" style="height: 250px; overflow-y: auto; border: 1px solid #ccc; background: #fff; padding: 10px;"></div>
-    <form id="chatForm" style="display: flex;">
-        <input type="text" id="userInput" class="form-control" placeholder="Nhập câu hỏi..." style="flex:1">
-        <button type="submit" class="btn btn-primary">Gửi</button>
-    </form>
-</div>
-
-<script>
-document.getElementById("chatForm").addEventListener("submit", function(e) {
-    e.preventDefault();
-    const userMessage = document.getElementById("userInput").value;
-    const chatArea = document.getElementById("chatArea");
-
-    // Hiển thị tin nhắn người dùng
-    chatArea.innerHTML += `<p><strong>Bạn:</strong> ${userMessage}</p>`;
-
-    // Gửi đến PHP
-    fetch("chatbox.php", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: userMessage })
-    })
-    .then(res => res.json())
-    .then(data => {
-        const botReply = data.choices[0].message.content;
-        chatArea.innerHTML += `<p><strong>AI:</strong> ${botReply}</p>`;
-        document.getElementById("userInput").value = "";
-        chatArea.scrollTop = chatArea.scrollHeight;
-    })
-    .catch(err => {
-        chatArea.innerHTML += `<p style="color:red;">Lỗi: Không thể kết nối chatbot.</p>`;
-        console.error(err);
-    });
-});
-</script>
 
 
 
     
 
-    <!-- Login Modal -->
-    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="loginModalLabel">Đăng nhập</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="mb-3">
-                            <label for="loginEmail" class="form-label">Email hoặc Số điện thoại</label>
-                            <input type="text" class="form-control" id="loginEmail" placeholder="Nhập email hoặc số điện thoại">
-                        </div>
-                        <div class="mb-3">
-                            <label for="loginPassword" class="form-label">Mật khẩu</label>
-                            <input type="password" class="form-control" id="loginPassword" placeholder="Nhập mật khẩu">
-                        </div>
-                        <div class="mb-3">
-<a href="#" class="text-primary">Quên mật khẩu?</a>
-                        </div>
-                        <button type="submit" class="btn btn-primary w-100">Đăng nhập</button>
-                    </form>
-                    <p class="mt-3 text-center">Chưa có tài khoản? <a href="#" data-bs-toggle="modal" data-bs-target="#registerModal" data-bs-dismiss="modal">Đăng ký ngay</a></p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Register Modal -->
-    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="registerModalLabel">Đăng ký</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="mb-3">
-                            <label for="registerName" class="form-label">Họ và tên</label>
-                            <input type="text" class="form-control" id="registerName" placeholder="Nhập họ và tên">
-                        </div>
-                        <div class="mb-3">
-                            <label for="registerEmail" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="registerEmail" placeholder="Nhập email">
-                        </div>
-                        <div class="mb-3">
-                            <label for="registerPassword" class="form-label">Mật khẩu</label>
-                            <input type="password" class="form-control" id="registerPassword" placeholder="Nhập mật khẩu">
-                        </div>
-                        <div class="mb-3">
-                            <label for="registerConfirmPassword" class="form-label">Xác nhận mật khẩu</label>
-                            <input type="password" class="form-control" id="registerConfirmPassword" placeholder="Xác nhận mật khẩu">
-                        </div>
-                        <button type="submit" class="btn btn-primary w-100">Đăng ký</button>
-                    </form>
-                    <p class="mt-3 text-center">Đã có tài khoản? <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-dismiss="modal">Đăng nhập ngay</a></p>
-                </div>
-            </div>
-        </div>
-    </div>
+   
 
     
     <!-- Footer -->
@@ -464,6 +415,8 @@ document.getElementById("chatForm").addEventListener("submit", function(e) {
     <script src="https://cdn.jsdelivr.net/npm/emoji-mart@latest/dist/browser.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.17.2/dist/sweetalert2.all.min.js"></script>
+
+
 </body>
 
 </html>
