@@ -11,15 +11,14 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="styles.css"/>
   <style>
-    #map {
-      height: 400px;
-      width: 100%;
+    #hospitalList {
       margin-top: 20px;
-    }
-    #directionsPanel {
-      margin-top: 20px;
-      max-height: 200px;
+      max-height: 400px;
       overflow-y: auto;
+    }
+    .hospital-item {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
     }
   </style>
 </head>
@@ -30,19 +29,16 @@
     <div class="container">
       <a class="navbar-brand" href="../index.html"><i class="fas fa-clinic-medical"></i> Y Tế Online</a>
       <div class="mx-auto">
-        <div class="mx-auto" id="searchContainer">
-                <form class="d-flex" id="searchForm">
-                    <input class="form-control me-2" type="search" placeholder="Tìm bác sĩ, triệu chứng..." aria-label="Search" id="searchInput">
-                    <button class="btn btn-outline-primary" type="submit"><i class="fas fa-search"></i></button>
-                </form>
-            </div>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Tìm bác sĩ, triệu chứng..." aria-label="Search"/>
+          <button class="btn btn-outline-primary" type="submit"><i class="fas fa-search"></i></button>
+        </form>
       </div>
       <div class="d-flex align-items-center">
         <span class="text-primary fw-bold me-3">
           <i class="fas fa-phone-alt me-2"></i>Hotline: <a href="tel:0797588054" class="text-primary text-decoration-none">0797588054</a>
         </span>
          <button class="btn btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#loginModal">Đăng nhập</button>
-   
       </div>
     </div>
   </nav>
@@ -55,6 +51,7 @@
         <li class="nav-item"><a class="nav-link" href="tintuc.html">Tin tức</a></li>
         <li class="nav-item"><a class="nav-link" href="chatvoibacsi.html">Chat với bác sĩ</a></li>
         <li class="nav-item"><a class="nav-link" href="camnang.html">Cẩm nang sức khỏe</a></li>
+        <li class="nav-item"><a class="nav-link" href="khambenhonl.html">Khám bệnh online</a></li>
         <li class="nav-item"><a class="nav-link" href="benh.html">Bệnh</a></li>
         <li class="nav-item"><a class="nav-link" href="thuoc.html">Thuốc</a></li>
         <li class="nav-item"><a class="nav-link active" href="cosoyte.html">Cơ sở y tế</a></li>
@@ -67,7 +64,7 @@
     <div class="container">
       <h1 class="display-4">Tư Vấn Y Tế Trực Tuyến</h1>
       <p class="lead">Kết nối với bác sĩ chuyên khoa, nhận tư vấn sức khỏe nhanh chóng và an toàn.</p>
-<a href="#" class="btn btn-light btn-lg">Tư vấn ngay</a>
+      <a href="#" class="btn btn-light btn-lg">Tư vấn ngay</a>
     </div>
   </section>
 
@@ -127,7 +124,7 @@
         </div>
         <!-- Right Sidebar -->
         <div class="col-lg-4">
-<h2 class="mb-4">Tìm cơ sở y tế</h2>
+          <h2 class="mb-4">Tìm cơ sở y tế</h2>
           <form id="searchForm" class="mb-4">
             <div class="mb-3">
               <label for="province" class="form-label">Tỉnh/Thành phố</label>
@@ -175,7 +172,7 @@
                 <option value="nghe an">Nghệ An</option>
                 <option value="ninh binh">Ninh Bình</option>
                 <option value="ninh thuan">Ninh Thuận</option>
-<option value="phu tho">Phú Thọ</option>
+                <option value="phu tho">Phú Thọ</option>
                 <option value="phu yen">Phú Yên</option>
                 <option value="quang binh">Quảng Bình</option>
                 <option value="quang nam">Quảng Nam</option>
@@ -205,8 +202,7 @@
             </div>
             <button type="submit" class="btn btn-primary w-100">Xem kết quả</button>
           </form>
-          <div id="map"></div>
-          <div id="directionsPanel"></div>
+          <div id="hospitalList"></div>
         </div>
       </div>
     </div>
@@ -230,7 +226,7 @@
           <span class="partner-logo"><img src="../anh/Tudu.jpg" alt=""></span>
         </div>
       </div>
-</div>
+    </div>
   </section>
 
   <!-- Newsletter -->
@@ -244,31 +240,7 @@
     </div>
   </section>
 
-  <!-- Services -->
-  <section class="features py-5">
-    <div class="container">
-      <h2 class="text-center mb-4">Dịch Vụ Của Chúng Tôi</h2>
-      <div class="row">
-        <div class="col-md-4 text-center">
-          <i class="fas fa-comment-medical fa-2x mb-2 text-primary"></i>
-          <h5>Tư Vấn Trực Tuyến</h5>
-          <p>Trao đổi cùng bác sĩ bất kỳ lúc nào.</p>
-        </div>
-        <div class="col-md-4 text-center">
-          <i class="fas fa-calendar-check fa-2x mb-2 text-primary"></i>
-          <h5>Đặt Lịch Khám</h5>
-          <p>Đặt lịch dễ dàng, nhanh chóng.</p>
-        </div>
-        <div class="col-md-4 text-center">
-          <i class="fas fa-book-medical fa-2x mb-2 text-primary"></i>
-          <h5>Kiến Thức Y Tế</h5>
-          <p>Kho tài liệu sức khỏe hữu ích.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Login Modal -->
+   <!-- Login Modal -->
     <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -332,35 +304,44 @@
     </div>
 
 
+  <!-- Services -->
+  <section class="features py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Dịch Vụ Của Chúng Tôi</h2>
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <i class="fas fa-comment-medical fa-2x mb-2 text-primary"></i>
+          <h5>Tư Vấn Trực Tuyến</h5>
+          <p>Trao đổi cùng bác sĩ bất kỳ lúc nào.</p>
+        </div>
+        <div class="col-md-4 text-center">
+          <i class="fas fa-calendar-check fa-2x mb-2 text-primary"></i>
+          <h5>Đặt Lịch Khám</h5>
+          <p>Đặt lịch dễ dàng, nhanh chóng.</p>
+        </div>
+        <div class="col-md-4 text-center">
+          <i class="fas fa-book-medical fa-2x mb-2 text-primary"></i>
+          <h5>Kiến Thức Y Tế</h5>
+          <p>Kho tài liệu sức khỏe hữu ích.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer class="bg-dark text-white text-center py-3">
-   <a href="https://tuminhvon123.github.io/BaiGiuaKi/"><p>© 2025 Y Tế Online. Mọi quyền được bảo lưu.</p></a>
+    <a href="https://tuminhvon123.github.io/BaiGiuaKi/"><p>© 2025 Y Tế Online. Mọi quyền được bảo lưu.</p></a>
   </footer>
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAuG-Zamr5mVBAxuFcz4z2idP7icVXBdp4&libraries=places,directions&callback=initMap" async defer></script>
   <script>
-    let map;
-    let directionsService;
-    let directionsRenderer;
-
-    function initMap() {
-      map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 12,
-      });
-      directionsService = new google.maps.DirectionsService();
-      directionsRenderer = new google.maps.DirectionsRenderer();
-      directionsRenderer.setMap(map);
-      directionsRenderer.setPanel(document.getElementById("directionsPanel"));
-    }
-
     const districtsByProvince = {
       "hanoi": ["Ba Đình", "Hoàn Kiếm", "Tây Hồ", "Long Biên", "Cầu Giấy", "Đống Đa", "Hai Bà Trưng", "Hoàng Mai", "Thanh Xuân"],
       "hcm": ["Quận 1", "Quận 2", "Quận 3", "Quận 4", "Quận 5", "Quận 6", "Quận 7", "Quận 8", "Quận 9", "Quận 10", "Quận 11", "Quận 12", "Bình Thạnh", "Gò Vấp", "Tân Bình", "Tân Phú", "Phú Nhuận", "Thủ Đức"],
       "danang": ["Hải Châu", "Thanh Khê", "Sơn Trà", "Ngũ Hành Sơn", "Liên Chiểu", "Cẩm Lệ", "Hoàng Sa"],
       "haiphong": ["Hồng Bàng", "Ngô Quyền", "Lê Chân", "Hải An", "Kiến An", "Đồ Sơn", "Dương Kinh"],
-"an giang": ["Long Xuyên", "Châu Đốc", "Tri Tôn", "Tân Châu"],
+      "an giang": ["Long Xuyên", "Châu Đốc", "Tri Tôn", "Tân Châu"],
       "bac giang": ["Bắc Giang", "Yên Dũng", "Lục Nam", "Việt Yên"],
       "bac kan": ["Bắc Kạn", "Ba Bể", "Na Rì", "Chợ Đồn"],
       "bac lieu": ["Bạc Liêu", "Hồng Dân", "Phước Long", "Vĩnh Lợi"],
@@ -400,7 +381,7 @@
       "ninh thuan": ["Phan Rang-Tháp Chàm", "Ninh Hải", "Bác Ái", "Thuận Bắc"],
       "phu tho": ["Việt Trì", "Phú Thọ", "Tân Sơn", "Lâm Thao"],
       "phu yen": ["Tuy Hòa", "Sông Cầu", "Đồng Xuân", "Tuy An"],
-"quang binh": ["Đồng Hới", "Ba Đồn", "Quảng Ninh", "Lệ Thủy"],
+      "quang binh": ["Đồng Hới", "Ba Đồn", "Quảng Ninh", "Lệ Thủy"],
       "quang nam": ["Tam Kỳ", "Hội An", "Điện Bàn", "Duy Xuyên"],
       "quang ngai": ["Quảng Ngãi", "Bình Sơn", "Sơn Tịnh", "Trà Bồng"],
       "quang ninh": ["Hạ Long", "Cẩm Phả", "Uông Bí", "Quảng Yên"],
@@ -418,6 +399,219 @@
       "vinh long": ["Vĩnh Long", "Long Hồ", "Mang Thít", "Tam Bình"],
       "vinh phuc": ["Vĩnh Yên", "Phúc Yên", "Tam Đảo", "Lập Thạch"],
       "yen bai": ["Yên Bái", "Nghĩa Lộ", "Trấn Yên", "Văn Yên"]
+    };
+
+    const hospitalsByProvince = {
+      "hanoi": [
+        { name: "Bệnh viện Bạch Mai", address: "78 Giải Phóng, Đống Đa, Hà Nội", description: "Bệnh viện đa khoa hàng đầu Việt Nam." },
+        { name: "Bệnh viện Việt Đức", address: "40 Tràng Thi, Hoàn Kiếm, Hà Nội", description: "Chuyên khoa ngoại và chấn thương chỉnh hình." },
+        { name: "Bệnh viện Nhi Trung ương", address: "18/879 La Thành, Đống Đa, Hà Nội", description: "Chuyên khoa nhi lớn nhất cả nước." }
+      ],
+      "hcm": [
+        { name: "Bệnh viện Chợ Rẫy", address: "201B Nguyễn Chí Thanh, Quận 5, TP.HCM", description: "Bệnh viện tuyến trung ương, chuyên sâu nhiều lĩnh vực." },
+        { name: "Bệnh viện Từ Dũ", address: "284 Cống Quỳnh, Quận 1, TP.HCM", description: "Chuyên khoa sản phụ khoa lớn tại TP.HCM." },
+        { name: "Bệnh viện Nhi Đồng 2", address: "14 Lý Tự Trọng, Quận 1, TP.HCM", description: "Chuyên khoa nhi uy tín." }
+      ],
+      "danang": [
+        { name: "Bệnh viện C Đà Nẵng", address: "122 Hải Phòng, Thạch Thang, Hải Châu, Đà Nẵng", description: "Bệnh viện đa khoa chất lượng cao." },
+        { name: "Bệnh viện Đà Nẵng", address: "124 Hải Phòng, Thạch Thang, Hải Châu, Đà Nẵng", description: "Cơ sở y tế lớn tại miền Trung." },
+        { name: "Bệnh viện Hoàn Mỹ Đà Nẵng", address: "161 Nguyễn Văn Linh, Thanh Khê, Đà Nẵng", description: "Bệnh viện tư nhân uy tín." }
+      ],
+      "haiphong": [
+        { name: "Bệnh viện Việt Tiệp", address: "1 Nhà Thương, Cát Dài, Lê Chân, Hải Phòng", description: "Bệnh viện đa khoa lớn tại Hải Phòng." },
+        { name: "Bệnh viện Nhi Hải Phòng", address: "393 Tô Hiệu, Lê Chân, Hải Phòng", description: "Chuyên khoa nhi uy tín." },
+        { name: "Bệnh viện Đa khoa Quốc tế Hải Phòng", address: "124 Nguyễn Đức Cảnh, Lê Chân, Hải Phòng", description: "Bệnh viện quốc tế chất lượng cao." }
+      ],
+      "an giang": [
+        { name: "Bệnh viện Đa khoa Trung tâm An Giang", address: "6 Lê Lợi, Long Xuyên, An Giang", description: "Bệnh viện đa khoa lớn tại An Giang." },
+        { name: "Bệnh viện Đa khoa Châu Đốc", address: "Đường Lê Lợi, Châu Đốc, An Giang", description: "Cơ sở y tế uy tín tại Châu Đốc." }
+      ],
+      "bac giang": [
+        { name: "Bệnh viện Đa khoa tỉnh Bắc Giang", address: "Đường Lê Lợi, TP. Bắc Giang", description: "Bệnh viện đa khoa chính của tỉnh." },
+        { name: "Bệnh viện Sản Nhi Bắc Giang", address: "Khu đô thị mới, TP. Bắc Giang", description: "Chuyên khoa sản và nhi." }
+      ],
+      "bac kan": [
+        { name: "Bệnh viện Đa khoa Bắc Kạn", address: "Tổ 8, phường Đức Xuân, TP. Bắc Kạn", description: "Bệnh viện đa khoa chính của tỉnh." }
+      ],
+      "bac lieu": [
+        { name: "Bệnh viện Đa khoa Bạc Liêu", address: "Đường Võ Thị Sáu, TP. Bạc Liêu", description: "Bệnh viện đa khoa lớn tại Bạc Liêu." }
+      ],
+      "bac ninh": [
+        { name: "Bệnh viện Đa khoa tỉnh Bắc Ninh", address: "Đường Nguyễn Quyền, TP. Bắc Ninh", description: "Bệnh viện đa khoa chính của tỉnh." },
+        { name: "Bệnh viện Sản Nhi Bắc Ninh", address: "Đường Huyền Quang, TP. Bắc Ninh", description: "Chuyên khoa sản và nhi." }
+      ],
+      "ben tre": [
+        { name: "Bệnh viện Nguyễn Đình Chiểu", address: "Đường Lê Lợi, TP. Bến Tre", description: "Bệnh viện đa khoa lớn tại Bến Tre." }
+      ],
+      "binh dinh": [
+        { name: "Bệnh viện Đa khoa tỉnh Bình Định", address: "Đường Nguyễn Huệ, TP. Quy Nhơn", description: "Bệnh viện đa khoa chính của tỉnh." },
+        { name: "Bệnh viện Phong - Da liễu Trung ương Quy Hòa", address: "Phường Ghềnh Ráng, TP. Quy Nhơn", description: "Chuyên khoa da liễu." }
+      ],
+      "binh duong": [
+        { name: "Bệnh viện Đa khoa tỉnh Bình Dương", address: "Đường Lê Lợi, TP. Thủ Dầu Một", description: "Bệnh viện đa khoa lớn tại Bình Dương." },
+        { name: "Bệnh viện Quốc tế Becamex", address: "Đường 30/4, TP. Thủ Dầu Một", description: "Bệnh viện quốc tế uy tín." }
+      ],
+      "binh phuoc": [
+        { name: "Bệnh viện Đa khoa tỉnh Bình Phước", address: "Đường Trần Phú, TP. Đồng Xoài", description: "Bệnh viện đa khoa chính của tỉnh." }
+      ],
+      "binh thuan": [
+        { name: "Bệnh viện Đa khoa tỉnh Bình Thuận", address: "Đường Hải Thượng Lãn Ông, TP. Phan Thiết", description: "Bệnh viện đa khoa lớn tại Bình Thuận." }
+      ],
+      "ca mau": [
+        { name: "Bệnh viện Đa khoa tỉnh Cà Mau", address: "Đường Lý Thường Kiệt, TP. Cà Mau", description: "Bệnh viện đa khoa chính của tỉnh." }
+      ],
+      "can tho": [
+        { name: "Bệnh viện Đa khoa Trung ương Cần Thơ", address: "Đường Châu Văn Liêm, Ninh Kiều, Cần Thơ", description: "Bệnh viện đa khoa tuyến trung ương." },
+        { name: "Bệnh viện Quốc tế Phương Châu", address: "Đường Nguyễn Văn Cừ, Ninh Kiều, Cần Thơ", description: "Bệnh viện quốc tế uy tín." }
+      ],
+      "cao bang": [
+        { name: "Bệnh viện Đa khoa tỉnh Cao Bằng", address: "Đường Hoàng Đình Giong, TP. Cao Bằng", description: "Bệnh viện đa khoa chính của tỉnh." }
+      ],
+      "dak lak": [
+        { name: "Bệnh viện Đa khoa vùng Tây Nguyên", address: "Đường Y Moan, TP. Buôn Ma Thuột", description: "Bệnh viện đa khoa lớn tại Tây Nguyên." },
+        { name: "Bệnh viện Đa khoa tỉnh Đắk Lắk", address: "Đường Hà Huy Tập, TP. Buôn Ma Thuột", description: "Bệnh viện đa khoa chính của tỉnh." }
+      ],
+      "dak nong": [
+        { name: "Bệnh viện Đa khoa tỉnh Đắk Nông", address: "Đường Lê Lợi, TP. Gia Nghĩa", description: "Bệnh viện đa khoa chính của tỉnh." }
+      ],
+      "dien bien": [
+        { name: "Bệnh viện Đa khoa tỉnh Điện Biên", address: "Đường Võ Nguyên Giáp, TP. Điện Biên Phủ", description: "Bệnh viện đa khoa chính của tỉnh." }
+      ],
+      "dong nai": [
+        { name: "Bệnh viện Đa khoa Đồng Nai", address: "Đường Đồng Khởi, TP. Biên Hòa", description: "Bệnh viện đa khoa lớn tại Đồng Nai." },
+        { name: "Bệnh viện Quốc tế Đồng Nai", address: "Đường Phạm Văn Thuận, TP. Biên Hòa", description: "Bệnh viện quốc tế uy tín." }
+      ],
+      "dong thap": [
+        { name: "Bệnh viện Đa khoa Đồng Tháp", address: "Đường Lê Lợi, TP. Cao Lãnh", description: "Bệnh viện đa khoa chính của tỉnh." },
+        { name: "Bệnh viện Đa khoa Sa Đéc", address: "Đường Nguyễn Tất Thành, TP. Sa Đéc", description: "Cơ sở y tế uy tín tại Sa Đéc." }
+      ],
+      "gia lai": [
+        { name: "Bệnh viện Đa khoa tỉnh Gia Lai", address: "Đường Trần Hưng Đạo, TP. Pleiku", description: "Bệnh viện đa khoa chính của tỉnh." }
+      ],
+      "ha giang": [
+        { name: "Bệnh viện Đa khoa tỉnh Hà Giang", address: "Đường Nguyễn Thái Học, TP. Hà Giang", description: "Bệnh viện đa khoa chính của tỉnh." }
+      ],
+      "ha nam": [
+        { name: "Bệnh viện Đa khoa tỉnh Hà Nam", address: "Đường Lê Lợi, TP. Phủ Lý", description: "Bệnh viện đa khoa chính của tỉnh." }
+      ],
+      "ha tinh": [
+        { name: "Bệnh viện Đa khoa tỉnh Hà Tĩnh", address: "Đường Hải Thượng Lãn Ông, TP. Hà Tĩnh", description: "Bệnh viện đa khoa chính của tỉnh." }
+      ],
+      "hai duong": [
+        { name: "Bệnh viện Đa khoa tỉnh Hải Dương", address: "Đường Thanh Niên, TP. Hải Dương", description: "Bệnh viện đa khoa chính của tỉnh." },
+        { name: "Bệnh viện Đa khoa Hòa Bình", address: "Đường Phạm Hùng, TP. Hải Dương", description: "Cơ sở y tế uy tín tại Hải Dương." }
+      ],
+      "hau giang": [
+        { name: "Bệnh viện Đa khoa tỉnh Hậu Giang", address: "Đường 30/4, TP. Vị Thanh", description: "Bệnh viện đa khoa chính của tỉnh." }
+      ],
+      "hoa binh": [
+        { name: "Bệnh viện Đa khoa tỉnh Hòa Bình", address: "Đường Cù Chính Lan, TP. Hòa Bình", description: "Bệnh viện đa khoa chính của tỉnh." }
+      ],
+      "hung yen": [
+        { name: "Bệnh viện Đa khoa tỉnh Hưng Yên", address: "Đường Hải Thượng Lãn Ông, TP. Hưng Yên", description: "Bệnh viện đa khoa chính của tỉnh." }
+      ],
+      "khanh hoa": [
+        { name: "Bệnh viện Đa khoa tỉnh Khánh Hòa", address: "Đường Yersin, TP. Nha Trang", description: "Bệnh viện đa khoa chính của tỉnh." },
+        { name: "Bệnh viện Đa khoa Vinmec Nha Trang", address: "Đường 42A Trần Phú, TP. Nha Trang", description: "Bệnh viện quốc tế uy tín." }
+      ],
+      "kien giang": [
+        { name: "Bệnh viện Đa khoa tỉnh Kiên Giang", address: "Đường Lạc Hồng, TP. Rạch Giá", description: "Bệnh viện đa khoa chính của tỉnh." }
+      ],
+      "kon tum": [
+        { name: "Bệnh viện Đa khoa tỉnh Kon Tum", address: "Đường Trần Hưng Đạo, TP. Kon Tum", description: "Bệnh viện đa khoa chính của tỉnh." }
+      ],
+      "lai chau": [
+        { name: "Bệnh viện Đa khoa tỉnh Lai Châu", address: "Đường Trần Phú, TP. Lai Châu", description: "Bệnh viện đa khoa chính của tỉnh." }
+      ],
+      "lam dong": [
+        { name: "Bệnh viện Đa khoa tỉnh Lâm Đồng", address: "Đường Nguyễn Văn Cừ, TP. Đà Lạt", description: "Bệnh viện đa khoa chính của tỉnh." },
+        { name: "Bệnh viện Hoàn Mỹ Đà Lạt", address: "Đường Mimosa, TP. Đà Lạt", description: "Bệnh viện tư nhân uy tín." }
+      ],
+      "lang son": [
+        { name: "Bệnh viện Đa khoa tỉnh Lạng Sơn", address: "Đường Lê Lợi, TP. Lạng Sơn", description: "Bệnh viện đa khoa chính của tỉnh." }
+      ],
+      "lao cai": [
+        { name: "Bệnh viện Đa khoa tỉnh Lào Cai", address: "Đường Chiềng On, TP. Lào Cai", description: "Bệnh viện đa khoa chính của tỉnh." }
+      ],
+      "long an": [
+        { name: "Bệnh viện Đa khoa Long An", address: "Đường Nguyễn Đình Chiểu, TP. Tân An", description: "Bệnh viện đa khoa chính của tỉnh." }
+      ],
+      "nam dinh": [
+        { name: "Bệnh viện Đa khoa tỉnh Nam Định", address: "Đường Trần Hưng Đạo, TP. Nam Định", description: "Bệnh viện đa khoa chính của tỉnh." }
+      ],
+      "nghe an": [
+        { name: "Bệnh viện Hữu nghị Đa khoa Nghệ An", address: "Đường Lê Nin, TP. Vinh", description: "Bệnh viện đa khoa lớn tại Nghệ An." },
+        { name: "Bệnh viện Sản Nhi Nghệ An", address: "Đường Nguyễn Phong Sắc, TP. Vinh", description: "Chuyên khoa sản và nhi." }
+      ],
+      "ninh binh": [
+        { name: "Bệnh viện Đa khoa tỉnh Ninh Bình", address: "Đường Trần Hưng Đạo, TP. Ninh Bình", description: "Bệnh viện đa khoa chính của tỉnh." }
+      ],
+      "ninh thuan": [
+        { name: "Bệnh viện Đa khoa tỉnh Ninh Thuận", address: "Đường Hải Thượng Lãn Ông, TP. Phan Rang-Tháp Chàm", description: "Bệnh viện đa khoa chính của tỉnh." }
+      ],
+      "phu tho": [
+        { name: "Bệnh viện Đa khoa tỉnh Phú Thọ", address: "Đường Trần Phú, TP. Việt Trì", description: "Bệnh viện đa khoa chính của tỉnh." }
+      ],
+      "phu yen": [
+        { name: "Bệnh viện Đa khoa tỉnh Phú Yên", address: "Đường Nguyễn Huệ, TP. Tuy Hòa", description: "Bệnh viện đa khoa chính của tỉnh." }
+      ],
+      "quang binh": [
+        { name: "Bệnh viện Hữu nghị Việt Nam - Cu Ba Đồng Hới", address: "Đường Nguyễn Văn Trỗi, TP. Đồng Hới", description: "Bệnh viện đa khoa lớn tại Quảng Bình." }
+      ],
+      "quang nam": [
+        { name: "Bệnh viện Đa khoa tỉnh Quảng Nam", address: "Đường Hùng Vương, TP. Tam Kỳ", description: "Bệnh viện đa khoa chính của tỉnh." }
+      ],
+      "quang ngai": [
+        { name: "Bệnh viện Đa khoa tỉnh Quảng Ngãi", address: "Đường Lê Hữu Trác, TP. Quảng Ngãi", description: "Bệnh viện đa khoa chính của tỉnh." }
+      ],
+      "quang ninh": [
+        { name: "Bệnh viện Đa khoa tỉnh Quảng Ninh", address: "Đường Tuệ Tĩnh, TP. Hạ Long", description: "Bệnh viện đa khoa chính của tỉnh." },
+        { name: "Bệnh viện Bãi Cháy", address: "Đường Giếng Đáy, TP. Hạ Long", description: "Cơ sở y tế uy tín tại Quảng Ninh." }
+      ],
+      "quang tri": [
+        { name: "Bệnh viện Đa khoa tỉnh Quảng Trị", address: "Đường Lê Lợi, TP. Đông Hà", description: "Bệnh viện đa khoa chính của tỉnh." }
+      ],
+      "soc trang": [
+        { name: "Bệnh viện Đa khoa tỉnh Sóc Trăng", address: "Đường Lê Lợi, TP. Sóc Trăng", description: "Bệnh viện đa khoa chính của tỉnh." }
+      ],
+      "son la": [
+        { name: "Bệnh viện Đa khoa tỉnh Sơn La", address: "Đường Tô Hiệu, TP. Sơn La", description: "Bệnh viện đa khoa chính của tỉnh." }
+      ],
+      "tay ninh": [
+        { name: "Bệnh viện Đa khoa tỉnh Tây Ninh", address: "Đường 30/4, TP. Tây Ninh", description: "Bệnh viện đa khoa chính của tỉnh." }
+      ],
+      "thai binh": [
+        { name: "Bệnh viện Đa khoa tỉnh Thái Bình", address: "Đường Lê Lợi, TP. Thái Bình", description: "Bệnh viện đa khoa chính của tỉnh." }
+      ],
+      "thai nguyen": [
+        { name: "Bệnh viện Trung ương Thái Nguyên", address: "Đường Đội Cấn, TP. Thái Nguyên", description: "Bệnh viện đa khoa tuyến trung ương." }
+      ],
+      "thanh hoa": [
+        { name: "Bệnh viện Đa khoa tỉnh Thanh Hóa", address: "Đường Hải Thượng Lãn Ông, TP. Thanh Hóa", description: "Bệnh viện đa khoa chính của tỉnh." },
+        { name: "Bệnh viện Nhi Thanh Hóa", address: "Đường Đinh Lễ, TP. Thanh Hóa", description: "Chuyên khoa nhi uy tín." }
+      ],
+      "thua thien hue": [
+        { name: "Bệnh viện Trung ương Huế", address: "Đường Lê Lợi, TP. Huế", description: "Bệnh viện đa khoa tuyến trung ương." },
+        { name: "Bệnh viện Đa khoa tỉnh Thừa Thiên Huế", address: "Đường Nguyễn Huệ, TP. Huế", description: "Bệnh viện đa khoa chính của tỉnh." }
+      ],
+      "tien giang": [
+        { name: "Bệnh viện Đa khoa tỉnh Tiền Giang", address: "Đường Hùng Vương, TP. Mỹ Tho", description: "Bệnh viện đa khoa chính của tỉnh." }
+      ],
+      "tra vinh": [
+        { name: "Bệnh viện Đa khoa tỉnh Trà Vinh", address: "Đường Lê Lợi, TP. Trà Vinh", description: "Bệnh viện đa khoa chính của tỉnh." }
+      ],
+      "tuyen quang": [
+        { name: "Bệnh viện Đa khoa tỉnh Tuyên Quang", address: "Đường Chiến Thắng, TP. Tuyên Quang", description: "Bệnh viện đa khoa chính của tỉnh." }
+      ],
+      "vinh long": [
+        { name: "Bệnh viện Đa khoa tỉnh Vĩnh Long", address: "Đường 30/4, TP. Vĩnh Long", description: "Bệnh viện đa khoa chính của tỉnh." }
+      ],
+      "vinh phuc": [
+        { name: "Bệnh viện Đa khoa tỉnh Vĩnh Phúc", address: "Đường Nguyễn Tất Thành, TP. Vĩnh Yên", description: "Bệnh viện đa khoa chính của tỉnh." }
+      ],
+      "yen bai": [
+        { name: "Bệnh viện Đa khoa tỉnh Yên Bái", address: "Đường Điện Biên, TP. Yên Bái", description: "Bệnh viện đa khoa chính của tỉnh." }
+      ]
     };
 
     document.getElementById('province').addEventListener('change', function() {
@@ -439,86 +633,30 @@
       e.preventDefault();
       const province = document.getElementById('province').value;
       const district = document.getElementById('district').value;
+      const hospitalList = document.getElementById('hospitalList');
 
-      if (province && district) {
-        const geocoder = new google.maps.Geocoder();
-        const address = `${district}, ${province === 'hcm' ? 'TP. Hồ Chí Minh' : province === 'hanoi' ? 'Hà Nội' : province === 'danang' ? 'Đà Nẵng' : province === 'haiphong' ? 'Hải Phòng' : province.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}`;
-        
-        geocoder.geocode({ address: address }, (results, status) => {
-          if (status === 'OK') {
-            if (!map) initMap();
-            map.setCenter(results[0].geometry.location);
-
-            // Tìm kiếm cơ sở y tế gần nhất
-            const service = new google.maps.places.PlacesService(map);
-            const request = {
-location: results[0].geometry.location,
-              radius: '5000', // Bán kính 5km
-              type: ['hospital', 'health'],
-            };
-
-            service.nearbySearch(request, (results, status) => {
-              if (status === google.maps.places.PlacesServiceStatus.OK && results.length > 0) {
-                const nearestHospital = results[0];
-                map.setCenter(nearestHospital.geometry.location);
-                createMarker(nearestHospital);
-
-                // Lấy vị trí người dùng (dùng geolocation nếu có)
-                if (navigator.geolocation) {
-                  navigator.geolocation.getCurrentPosition(
-                    (position) => {
-                      const origin = {
-                        lat: position.coords.latitude,
-                        lng: position.coords.longitude,
-                      };
-                      const destination = nearestHospital.geometry.location;
-
-                      // Tính toán đường đi
-                      const requestDirections = {
-                        origin: origin,
-                        destination: destination,
-                        travelMode: 'DRIVING',
-                      };
-
-                      directionsService.route(requestDirections, (result, status) => {
-                        if (status === 'OK') {
-                          directionsRenderer.setDirections(result);
-                        } else {
-                          alert('Không thể tính đường đi. Lỗi: ' + status);
-                        }
-                      });
-                    },
-                    () => {
-                      alert('Không thể lấy vị trí của bạn. Vui lòng bật định vị hoặc nhập thủ công!');
-                    }
-                  );
-                } else {
-                  alert('Trình duyệt không hỗ trợ định vị. Vui lòng nhập thủ công điểm xuất phát.');
-                }
-              } else {
-                alert('Không tìm thấy cơ sở y tế gần đây! Lỗi: ' + status);
-              }
-            });
-          } else {
-            alert('Không tìm thấy địa chỉ. Lỗi: ' + status);
-          }
-        });
+      if (province) {
+        hospitalList.innerHTML = '';
+        const hospitals = hospitalsByProvince[province] || [];
+        if (hospitals.length > 0) {
+          hospitalList.innerHTML = '<h4>Danh sách bệnh viện</h4>';
+          hospitals.forEach(hospital => {
+            const hospitalItem = document.createElement('div');
+            hospitalItem.className = 'hospital-item';
+            hospitalItem.innerHTML = `
+              <h5>${hospital.name}</h5>
+              <p><strong>Địa chỉ:</strong> ${hospital.address}</p>
+              <p>${hospital.description}</p>
+            `;
+            hospitalList.appendChild(hospitalItem);
+          });
+        } else {
+          hospitalList.innerHTML = '<p>Không tìm thấy bệnh viện nào trong khu vực này.</p>';
+        }
       } else {
-        alert('Vui lòng chọn tỉnh/thành phố và quận/huyện!');
+        hospitalList.innerHTML = '<p>Vui lòng chọn tỉnh/thành phố!</p>';
       }
     });
-
-    function createMarker(place) {
-      const marker = new google.maps.Marker({
-        map: map,
-        position: place.geometry.location,
-        title: place.name,
-      });
-      const infowindow = new google.maps.InfoWindow({
-        content: place.name,
-      });
-      infowindow.open(map, marker); // Sử dụng marker vừa tạo
-    }
   </script>
 </body>
 </html>
