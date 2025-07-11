@@ -7,3 +7,7 @@ document.getElementById("registerForm").addEventListener("submit", function(e) {
         alert("Mật khẩu không khớp!");
     }
 });
+
+
+
+
