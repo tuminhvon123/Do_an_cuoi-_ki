@@ -145,3 +145,8 @@ function appendMessage(sender, message) {
     chatMessages.scrollTop = chatMessages.scrollHeight;
 }
 
+document.getElementById('menu-toggle').addEventListener('click', function () {
+    const menu = document.getElementById('responsive-menu');
+    menu.classList.toggle('d-none');
+});
+

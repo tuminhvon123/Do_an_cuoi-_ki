@@ -51,32 +51,37 @@
 
     <!-- Menu (Mục lục) -->
     <nav class="sub-menu bg-white shadow-sm py-2">
-        <div class="container">
-            <ul class="nav nav-pills nav-fill">
-                <li class="nav-item">
-                    <a class="nav-link active" href="index.html">Trang chủ</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="front-end/tintuc.html">Tin tức</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="front-end/chatvoibacsi.html">Chat với bác sĩ</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="front-end/camnang.html">Cẩm nang sức khỏe</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="front-end/benh.html">Bệnh</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="front-end/thuoc.html">Thuốc</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="front-end/cosoyte.html">Cơ sở y tế</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    <div class="container">
+        <!-- Nút hiện/ẩn menu -->
+        <button id="menu-toggle" class="d-md-none btn btn-outline-secondary mb-2">☰ Menu</button>
+
+        <!-- Danh sách menu -->
+        <ul class="nav nav-pills nav-fill flex-column flex-md-row d-none d-md-flex" id="responsive-menu">
+            <li class="nav-item">
+                <a class="nav-link active" href="index.html">Trang chủ</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="front-end/tintuc.html">Tin tức</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="front-end/chatvoibacsi.html">Chat với bác sĩ</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="front-end/camnang.html">Cẩm nang sức khỏe</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="front-end/benh.html">Bệnh</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="front-end/thuoc.html">Thuốc</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="front-end/cosoyte.html">Cơ sở y tế</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
 
     <!-- Banner -->
     <section class="hero bg-primary text-white text-center py-5">
